@@ -1,0 +1,73 @@
+*{
+  margin: 5px;
+  padding: 1px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+ 
+}
+.container {
+  height: 100%;
+  position: relative;
+  
+}
+input {
+  font-size: 18px;
+}
+h1 {
+  color: #696969;
+  font-size: 20px;
+  margin: 10 10 10 15;
+  text-align: left;
+  font-family: "PT Serif";
+}
+#hide-listings,
+#show-listings {
+  width: 15%;
+}
+.search{
+  margin-left: 0px;
+}
+
+#restaurant-list {
+  font-size: 13px;
+  height: 50%;
+  width: 30%;
+}
+#map {
+  border: 2px solid #D3D3D3;
+  bottom:0px;
+  left: 250px;
+  position: absolute;
+  height: 100%;
+  right: 0px;
+}
+.options-box {
+  background: #fff;
+  border: 1px solid #999;
+  border-radius: 3px;
+  height: 100%;
+  line-height: 35px;
+  padding: 5px 5px 5px 10px;
+  text-align: center;
+  width: 300px;
+}
+#pano {
+  width: 250px;
+  height: 250px;
+  margin-bottom: 10px;
+}
+.text {
+  font-size: 12px;
+}
+
+@media screen and (max-width: 800px) {
+    .container {
+    display: flex;
+    flex-flow: column wrap;
+    }
+}

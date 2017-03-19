@@ -1,0 +1,7 @@
+html,body,#map,.container,.row,.col-md-9{
+        height: 100%;
+
+      }
+      #map {
+      	margin: 500%;
+      }
