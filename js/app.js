@@ -13,7 +13,7 @@ var locations = [
         content: 'https://www.facebook.com/bananagrillbar/'
       },
         {title: 'Rio Rodizio', 
-        location: {lat: 53.3255424, lng:-6.25517,3a,75y,231.28h,88.27t},
+        location: {lat: 53.3255424, lng:-6.25517},
         content: 'https://www.facebook.com/riorodizioranelagh/'
       },
         {title: 'Bistro Brazil', 
