@@ -6,7 +6,7 @@ var markers = [];
 var marker;
 
 var placeMarkers = [];
-
+//location secion - TODO I have to put this inside viewmode
 var locations = [
 	   {title: 'Banana Grill', 
         location: {lat: 53.3452104, lng:-6.2629325},
@@ -27,7 +27,7 @@ var locations = [
 ];
 
 
-
+//this code starts the map
 function initMap() {
 	map = new google.maps.Map(document.getElementById('map'), {
 		center: {lat: 53.350140, lng: -6.251495},
@@ -35,9 +35,9 @@ function initMap() {
 		mapTypeControl: false
 });
 
-
+//this code starts the infowindow the the user clicks on it
 var	largeInfowindow = new google.maps.InfoWindow();
-maxwidth: 100;
+maxwidth: 200;
 
 var defaultIcon = makeMarkerIcon('0091ff');
 
@@ -45,7 +45,7 @@ var highlightedIcon = makeMarkerIcon('ffff24');
 	
 var bounds = new google.maps.LatLngBounds();
 
-
+//this loop 
 for (var i = 0; i < locations.length; i++) {
 	var position = locations[i].location;
     var content = locations[i].content;
@@ -82,7 +82,7 @@ document.getElementById('show-listings').addEventListener('click', showListings)
 document.getElementById('hide-listings').addEventListener('click', function() {
 	hideMarkers(markers);
 });
-
+//creating a variable view mode for the restaurants
 var restaurantVM = new RestaurantViewModel();
 ko.applyBindings(restaurantVM);
 }
@@ -122,7 +122,7 @@ function populateInfoWindow(marker, infowindow) {
                 position: nearStreetViewLocation,
                 pov: {
                    heading: heading,
-                   pitch: 20
+                   pitch: 15 // this changes the degrees of teh camera if I want to look up or down
                 }
             };
 
@@ -166,7 +166,7 @@ function makeMarkerIcon(markerColor) {
 		new google.maps.Size(21, 34));
 	return markerImage;
 }
-
+//Knockout starts
 var RestaurantViewModel = function() {
 	var self = this;
 	this.restaurantList = ko.observableArray([]);
@@ -215,11 +215,10 @@ var RestaurantViewModel = function() {
         }  
     };
 
-    //Couple our search items with our search/marker filter functions
     self.searchItem.subscribe(self.searchFilter);
     self.searchItem.subscribe(self.markerFilter);
 };
 
 function errorHandling() {
-	alert("Loading Google Maps Failed!!");
+	alert("Please try again later!!");
 }
