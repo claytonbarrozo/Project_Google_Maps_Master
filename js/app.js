@@ -12,18 +12,22 @@ var locations = [
         location: {lat: 53.3452104, lng:-6.2629325},
         content: 'https://www.facebook.com/bananagrillbar/'
       },
+    
         {title: 'Rio Rodizio', 
         location: {lat: 53.3255424, lng:-6.25517},
         content: 'https://www.facebook.com/riorodizioranelagh/'
       },
+    
         {title: 'Bistro Brazil', 
         location: {lat: 53.3535441, lng:-6.2592164},
         content: 'https://www.facebook.com/bistrobrazilrestaurant/'
       },
+     
         {title: 'Taste of Brazil Restaurant',
         location: {lat: 53.3445609, lng:-6.2672964},
         content: 'https://www.facebook.com/TasteOfBrazil/?hc_ref=SEARCH&fref=nf'
-      }
+      },
+     
 ];
 
 
@@ -158,7 +162,7 @@ function hideMarkers(markers) {
 
 function makeMarkerIcon(markerColor) {
 	var markerImage = new google.maps.MarkerImage(
-		'http://chart.googleapis.com/chart?chst=d_map_spin&chld=1.15|0|' + markerColor +
+		'https://chart.googleapis.com/chart?chst=d_map_spin&chld=1.15|0|' + markerColor +
 		'|40|_|%E2%80%A2',
 		new google.maps.Size(21, 34),
 		new google.maps.Point(0, 0),
@@ -193,7 +197,7 @@ var RestaurantViewModel = function() {
 		google.maps.event.trigger(this.marker, 'click');
 		
 	};
-
+    //filter section
 	self.searchItem = ko.observable('');
     self.searchFilter = function(value) {
         self.restaurantList.removeAll();
@@ -222,3 +226,40 @@ var RestaurantViewModel = function() {
 function errorHandling() {
 	alert("Please try again later!!");
 }
+    //Setting up Foursquare for infowindow
+    var CLIENT_ID = 'ZHNYRYRJWNHQGJHTPVVWLI1A3QDG3EJS42TFTIIDWEGGJOVX';
+    var CLIENT_SECRET = 'DPMYPDI0XVR5LITCDEEASMVJ0EGQ0HXXEGFNXVJSQSRU5SXV';
+   
+
+    //Populate the infowindow with Foursquare
+    this.populateInfoWindow = function(marker, infowindow) {
+      
+      var url = 'https://api.foursquare.com/v2/venues/' + marker.id;
+      
+        $.ajax({
+          url: url,
+          dataType: 'json',
+          data: {
+            id: location.foursquareId,
+            client_id: CLIENT_ID,
+            client_secret: CLIENT_SECRET,
+            v: VERSION,
+            async: true
+          },
+          success: function(data) {
+            var venue = data.response.venue.name;
+            var address = data.response.venue.location.address ? data.response.venue.location.address : " ";
+            var city = data.response.venue.location.city ? data.response.venue.location.city : " ";
+            var state = data.response.venue.location.state ? data.response.venue.location.state : " ";
+            var zipCode = data.response.venue.location.postalCode ? data.response.venue.location.postalCode : " ";
+            var phone = data.response.venue.contact.formattedPhone ? data.response.venue.contact.formattedPhone : " ";
+
+            self.infowindow.setContent('<div>' + '<b>' + venue + '</b>' + '</div>' + '<div>' + address + '</div>' + '<div>' + city + ', ' + state + ' ' + zipCode + '<div>' + phone);
+            self.infowindow.open(map, marker);
+            console.log(data);
+          }
+        }).fail(function (e) {
+          self.infowindow.setContent('<div><h4>Well this is embarrassing...</h4></div>' + '<div><h4>Foursquare could not be loaded.</h4></div>');
+          self.infowindow.open(map, marker);
+        });
+    };

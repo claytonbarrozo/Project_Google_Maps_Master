@@ -19,12 +19,14 @@
             <form>
             <input type="text" name="search" placeholder="Ex: Restaurants" autocomplete="off" data-bind="textInput: searchItem">
             </form>
+            
         
         <div id="Restaurant-list">
             <ul data-bind="foreach: restaurantList">
                 <li data-bind="text: title, click: $parent.selectedRestaurant"></li>
             </ul>
         </div>
+       
      <div class="map-box">         		
     <div id="map"></div>
     </div>
@@ -32,7 +34,7 @@
 
         
     <script src="js/lib/jquery.min.js"></script>
-    <script src="js/knockout-3.2.0.js"></script>
+    <script src="js/lib/knockout-3.2.0.js"></script>
   	<script src="js/app.js"></script>
     <script async defer 
     src="https://maps.googleapis.com/maps/api/js?libraries=drawing,geometrykey=AIzaSyA5DaSnIKLUeYGXiutUaJSHfNaI8hmqjMM&callback=initMap" onerror="errorHandling()">
