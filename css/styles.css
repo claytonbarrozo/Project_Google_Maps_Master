@@ -1,25 +1,44 @@
 *{
-  margin: 5px;
-  padding: 1px;
+  margin: 0px;
+  padding: 0px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
 }
-
+/* Mobile Section*/
 html,
-body {
+body,
+ {
   height: 100%;
- 
+  width: 400px;
+  }
+h1,
+h2,
+h3,
+h4,
+p {
+  text-align: center;
 }
+
 .container {
   height: 100%;
-  position: relative;
-  
+  width: 100%;
+ }
+ /* Option-box Section*/
+ .option-box {
+  border: 1px solid #999;
+  border-radius: 3px;
+  height: 40%;
+  float: left;
+  text-align: left;
+  width: 100%;
+  background-color: black;
+  box-shadow: 10px 10px 5px #888888;
 }
 input {
   font-size: 18px;
 }
-h1 {
-  color: #696969;
+h1, h3 {
+  color: white;
   font-size: 20px;
   margin: 10 10 10 15;
   text-align: left;
@@ -27,35 +46,66 @@ h1 {
 }
 #hide-listings,
 #show-listings {
-  width: 15%;
+  height: 25px;
+  width: 75%;
+  margin-top: 5px;
+  margin-left: 50px;
 }
 .search{
-  margin-left: 0px;
+    color: white;
+    margin-top: 10px;
+
+ 
+}
+form input{
+height: 20px;
+width: 75%;
+margin: 0;
+padding: 0;
+font-size: 15px;
+border: 1px solid #CCCCCC;
+margin-left: 50px;
+margin-top: 5px;
+
 }
 
 #restaurant-list {
   font-size: 13px;
-  height: 50%;
-  width: 30%;
+    color: white;
+    float: left;
+    padding-top: 10px;
+    padding-left: 10px;
+    margin-left: 50px;
+    
 }
-#map {
-  border: 2px solid #D3D3D3;
-  bottom:0px;
-  left: 250px;
-  position: absolute;
-  height: 100%;
-  right: 0px;
+li {
+  font-size: 18px;
 }
-.options-box {
-  background: #fff;
+li:hover {
+  color: blue;
+  background-color: white;
+}
+li:active {
+  color: black;
+}
+
+/* End-Option-box Section*/
+/* Map Section*/
+.map-box {
+  margin: auto;
+  margin-top: 35px;
   border: 1px solid #999;
-  border-radius: 3px;
-  height: 100%;
-  line-height: 35px;
-  padding: 5px 5px 5px 10px;
-  text-align: center;
-  width: 300px;
+  border-radius: 2px;
+  height: 150%;
+  width: 100%;
+  float: left;
+     
 }
+ #map {
+        height: 100%;
+      }
+/*End - Map Section*/
+
 #pano {
   width: 250px;
   height: 250px;
@@ -63,11 +113,44 @@ h1 {
 }
 .text {
   font-size: 12px;
+  color: white;
 }
 
-@media screen and (max-width: 800px) {
-    .container {
-    display: flex;
-    flex-flow: column wrap;
-    }
+/* End - Mobile Section*/
+/* Media Query section For large screen*/
+@media screen and (min-width: 800px) {
+#hide-listings,
+#show-listings {
+   margin-left: 25px;
 }
+form input{
+  margin-left: 25px;
+}
+
+#restaurant-list {
+    margin-left: 25px;
+    
+}
+.option-box {
+    margin-top: 10px;
+    margin-left: 10px;
+    height: 98%;
+    width: 240px;
+    background-color: blue;
+  }
+
+.map-box {
+    border: 1px solid #999;
+    border-radius: 3px;
+    height: 98%;
+    width: 80%;
+    box-shadow: 10px 10px 5px #888888;
+    border: 2px solid #D3D3D3;
+    bottom:0px;
+    left: 280px;
+    position: absolute;
+      
+  }
+}
+
+/* End - Media Query section For large screen*/

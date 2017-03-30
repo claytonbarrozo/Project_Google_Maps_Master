@@ -10,32 +10,32 @@
 
 	<div class="container">
 		<div class="option-box">
-			<h1>Find my Restaurant<br> in Dublin</h1>
+			<h1>Find my Restaurant in Dublin</h1>
 			<input id="show-listings" type="button" value="Show Listings"><br>
     		<input id="hide-listings" type="button" value="Hide Listings">
-		<div>
+		<div><br>
         <div class="search">
-            <span>Search for Your <br>Brazilian Restaurants</span><br>
+            <h3>Filter</h3></div>
+            <form>
             <input type="text" name="search" placeholder="Ex: Restaurants" autocomplete="off" data-bind="textInput: searchItem">
-        </div>
+            </form>
+        
         <div id="Restaurant-list">
             <ul data-bind="foreach: restaurantList">
                 <li data-bind="text: title, click: $parent.selectedRestaurant"></li>
             </ul>
         </div>
-       <div id="Pictures-location">
-           
-       </div>
-        		
-        
+     <div class="map-box">         		
+    <div id="map"></div>
+    </div>
 	</div>
 
-        <div id="map"></div>
+        
     <script src="js/lib/jquery.min.js"></script>
     <script src="js/knockout-3.2.0.js"></script>
   	<script src="js/app.js"></script>
     <script async defer 
-    src="https://maps.googleapis.com/maps/api/js?libraries=drawing,geometrykey=AIzaSyCnoxuJHAXNwi3LT4nnhlq8vkxPTYU--oQ&callback=initMap" onerror="errorHandling()">
+    src="https://maps.googleapis.com/maps/api/js?libraries=drawing,geometrykey=AIzaSyA5DaSnIKLUeYGXiutUaJSHfNaI8hmqjMM&callback=initMap" onerror="errorHandling()">
     </script>
    
 </body>
