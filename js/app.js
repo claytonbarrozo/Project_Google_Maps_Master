@@ -1,33 +1,52 @@
 
 var map;
 
+var largeInfowindow;
+
 var markers = [];
 
 var marker;
 
 var placeMarkers = [];
 //location secion - TODO I have to put this inside viewmode
-var locations = [
-	   {title: 'Banana Grill', 
+  var locations = [
+     {title: 'Banana Grill', 
         location: {lat: 53.3452104, lng:-6.2629325},
-        content: 'https://www.facebook.com/bananagrillbar/'
-      },
+        content: 'https://www.facebook.com/bananagrillbar/',
+        foursquareId: '559d82ed498e73f7a8b8169c',
     
+          
+      showListing: ko.observable(true)
+    },
         {title: 'Rio Rodizio', 
         location: {lat: 53.3255424, lng:-6.25517},
-        content: 'https://www.facebook.com/riorodizioranelagh/'
-      },
-    
+        content: 'https://www.facebook.com/riorodizioranelagh/',
+        foursquareId: '5443c0c5498e57860e48ade2',
+      
+      showListing: ko.observable(true)
+    },
         {title: 'Bistro Brazil', 
-        location: {lat: 53.3535441, lng:-6.2592164},
-        content: 'https://www.facebook.com/bistrobrazilrestaurant/'
-      },
-     
-        {title: 'Taste of Brazil Restaurant',
+        location: {lat: 53.3519492, lng:-6.2597197},
+        content: 'https://www.facebook.com/bistrobrazilrestaurant/',
+        foursquareId: '550b3d49498e2cba78228606',
+      
+      showListing: ko.observable(true)
+    },
+        {title: 'Taste of Brazil',
         location: {lat: 53.3445609, lng:-6.2672964},
-        content: 'https://www.facebook.com/TasteOfBrazil/?hc_ref=SEARCH&fref=nf'
-      },
+        content: 'https://www.facebook.com/TasteOfBrazil/?hc_ref=SEARCH&fref=nf',
+        foursquareId: '4dbd535893a08f9274d2907b',
      
+      showListing: ko.observable(true)
+    },
+     
+        {title: 'Buenos Aires Grill',
+        location: {lat: 53.3410523, lng:-6.2689497},
+        content: 'https://www.facebook.com/Buenos-Aires-Grill-176781262519124/',
+        foursquareId: '4b17bbedf964a5209bc723e3',
+     
+      showListing: ko.observable(true)
+    },
 ];
 
 
@@ -40,7 +59,7 @@ function initMap() {
 });
 
 //this code starts the infowindow the the user clicks on it
-var	largeInfowindow = new google.maps.InfoWindow();
+largeInfowindow = new google.maps.InfoWindow();
 maxwidth: 200;
 
 var defaultIcon = makeMarkerIcon('0091ff');
@@ -54,15 +73,15 @@ for (var i = 0; i < locations.length; i++) {
 	var position = locations[i].location;
     var content = locations[i].content;
 	var title = locations[i].title;
-	var marker = new google.maps.Marker({
-		map: map,
-		position: position,
-		title: title,
-		content: content,
-		icon: defaultIcon,
-		animation: google.maps.Animation.DROP,
-		id: i
-	});
+    var marker = new google.maps.Marker({
+        map: map,
+        position: position,
+        title: title,
+        content: content,
+        icon: defaultIcon,
+        animation: google.maps.Animation.DROP,
+        id: locations[i].foursquareId
+    });
 
 markers.push(marker);
 
@@ -226,7 +245,8 @@ var RestaurantViewModel = function() {
 function errorHandling() {
 	alert("Please try again later!!");
 }
-    //Setting up Foursquare for infowindow
+   
+   //Setting up Foursquare for infowindow
     var CLIENT_ID = 'ZHNYRYRJWNHQGJHTPVVWLI1A3QDG3EJS42TFTIIDWEGGJOVX';
     var CLIENT_SECRET = 'DPMYPDI0XVR5LITCDEEASMVJ0EGQ0HXXEGFNXVJSQSRU5SXV';
    
@@ -234,7 +254,8 @@ function errorHandling() {
     //Populate the infowindow with Foursquare
     this.populateInfoWindow = function(marker, infowindow) {
       
-      var url = 'https://api.foursquare.com/v2/venues/' + marker.id;
+      var url = 'https://api.foursquare.com/v2/venues/' + marker.id + '?ll=53.350140,-6.251495&oauth_token=M2XWK2D1X3QIQ1E2J0BYNK1VKR4JVVCHVE0ERRR2NFZNWZ1H&v=20170331' ;
+
       
         $.ajax({
           url: url,
@@ -243,10 +264,10 @@ function errorHandling() {
             id: location.foursquareId,
             client_id: CLIENT_ID,
             client_secret: CLIENT_SECRET,
-            v: VERSION,
+          
             async: true
           },
-          success: function(data) {
+          success: function(data) { console.log(data)
             var venue = data.response.venue.name;
             var address = data.response.venue.location.address ? data.response.venue.location.address : " ";
             var city = data.response.venue.location.city ? data.response.venue.location.city : " ";
@@ -254,12 +275,12 @@ function errorHandling() {
             var zipCode = data.response.venue.location.postalCode ? data.response.venue.location.postalCode : " ";
             var phone = data.response.venue.contact.formattedPhone ? data.response.venue.contact.formattedPhone : " ";
 
-            self.infowindow.setContent('<div>' + '<b>' + venue + '</b>' + '</div>' + '<div>' + address + '</div>' + '<div>' + city + ', ' + state + ' ' + zipCode + '<div>' + phone);
-            self.infowindow.open(map, marker);
+            largeInfowindow.setContent('<div>' + '<b>' + venue + '</b>' + '</div>' + '<div>' + address + '</div>' + '<div>' + city + ', ' + state + ' ' + zipCode + '<div>' + phone);
+            largeInfowindow.open(map, marker);
             console.log(data);
           }
         }).fail(function (e) {
-          self.infowindow.setContent('<div><h4>Well this is embarrassing...</h4></div>' + '<div><h4>Foursquare could not be loaded.</h4></div>');
-          self.infowindow.open(map, marker);
+          largeInfowindow.setContent('<div><h4>Well this is embarrassing...</h4></div>' + '<div><h4>Foursquare could not be loaded.</h4></div>');
+          largeInfowindow.open(map, marker);
         });
     };

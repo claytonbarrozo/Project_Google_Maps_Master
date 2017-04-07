@@ -3,14 +3,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<title>Brazilian Restaurants in Dublin</title>
+	<title>Favorites Restaurants in Dublin</title>
 	<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
 	<div class="container">
 		<div class="option-box">
-			<h1>Find my Restaurant in Dublin</h1>
+			<h1>Find my Restaurant in Ireland</h1>
 			<input id="show-listings" type="button" value="Show Listings"><br>
     		<input id="hide-listings" type="button" value="Hide Listings">
 		<div><br>
@@ -19,14 +19,12 @@
             <form>
             <input type="text" name="search" placeholder="Ex: Restaurants" autocomplete="off" data-bind="textInput: searchItem">
             </form>
-            
         
         <div id="Restaurant-list">
             <ul data-bind="foreach: restaurantList">
                 <li data-bind="text: title, click: $parent.selectedRestaurant"></li>
             </ul>
         </div>
-       
      <div class="map-box">         		
     <div id="map"></div>
     </div>
@@ -34,10 +32,10 @@
 
         
     <script src="js/lib/jquery.min.js"></script>
-    <script src="js/lib/knockout-3.2.0.js"></script>
+    <script src="js/knockout-3.2.0.js"></script>
   	<script src="js/app.js"></script>
     <script async defer 
-    src="https://maps.googleapis.com/maps/api/js?libraries=drawing,geometrykey=AIzaSyA5DaSnIKLUeYGXiutUaJSHfNaI8hmqjMM&callback=initMap" onerror="errorHandling()">
+    src="https://maps.googleapis.com/maps/api/js?libraries=drawing,geometry&key=AIzaSyA5DaSnIKLUeYGXiutUaJSHfNaI8hmqjMM&callback=initMap" onerror="errorHandling()">
     </script>
    
 </body>
