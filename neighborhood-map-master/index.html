@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Neighborhood Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="neighborhood_map.css">
+  </head>
+  <body>
+
+ 
+
+     
+
+    <div class='col-1' id="map">
+
+
+
+    </div>
+    <!--template -->
+  
+
+    <a id="menu">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M2 6h20v3H2zm0 5h20v3H2zm0 5h20v3H2z"/>
+        </svg> 
+     </a>
+
+      
+
+
+      <div class="optionsBox">
+         
+
+        <strong>Chineese Food!</strong>
+     <input autocomplete="off" data-bind="value: query, valueUpdate: 'keyup'", placeholder="Search" type="search">
+
+
+       <ul data-bind="template: {name:'location', foreach:filteredArray}"></ul>
+      <form>
+      <script type="text/html" id="location">
+          <li data-bind="click: $root.listClick">
+              <strong data-bind="text: name">
+              <span data-bind="text: position"></span>
+              </strong>
+          </li>
+          </script>
+
+         
+
+    <script type="text/javascript">
+      var menu = document.getElementById('menu'); // define 'menu'
+  var drawer = document.getElementsByClassName('optionsBox')[0]; //define 'drawer'
+
+      menu.addEventListener('click', function(e) {
+  drawer.classList.toggle('open');
+  e.stopPropagation();
+});
+    </script>      
+
+      </script>
+      </form>
+      </div>
+     
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>   
+    <script src="oauth-signature.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
+
+    <script src="neighborhood_map.js"> 
+
+    </script>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5MhFR-mIMsTzanUl_RLvAq7KSuSadgww&callback=initMap"
+    onerror="googleError()"></script>
+
+
+
+  </body>
+</html>

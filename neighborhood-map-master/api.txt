@@ -1,0 +1,777 @@
+https://api.yelp.com/v2/search/?term=California Wine Merchant&location=San Francisco, CA&category_filter=wineries
+
+{
+    "region": {
+        "span": {
+            "latitude_delta": 0.12468730999999877, 
+            "longitude_delta": 0.2228059900000119
+        }, 
+        "center": {
+            "latitude": 37.79727655, 
+            "longitude": -122.36774545
+        }
+    }, 
+    "total": 8, 
+    "businesses": [
+        {
+            "is_claimed": true, 
+            "rating": 4.5, 
+            "mobile_url": "http://m.yelp.com/biz/san-francisco-wine-trading-company-san-francisco?adjust_creative=jm06CzZZen_oNkv_p8thnA&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=jm06CzZZen_oNkv_p8thnA", 
+            "rating_img_url": "https://s3-media2.fl.yelpcdn.com/assets/2/www/img/99493c12711e/ico/stars/v1/stars_4_half.png", 
+            "review_count": 97, 
+            "name": "San Francisco Wine Trading Company", 
+            "rating_img_url_small": "https://s3-media2.fl.yelpcdn.com/assets/2/www/img/a5221e66bc70/ico/stars/v1/stars_small_4_half.png", 
+            "url": "http://www.yelp.com/biz/san-francisco-wine-trading-company-san-francisco?adjust_creative=jm06CzZZen_oNkv_p8thnA&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=jm06CzZZen_oNkv_p8thnA", 
+            "categories": [
+                [
+                    "Wineries", 
+                    "wineries"
+                ], 
+                [
+                    "Beer, Wine & Spirits", 
+                    "beer_and_wine"
+                ]
+            ], 
+            "phone": "4157316222", 
+            "snippet_text": "I love this place. Why? Because: \n\n- The people who work here are great--everyone is friendly and welcoming. \n\n- They know their alcohol. And if you get...", 
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/Te9Kr2FagXazLZb7iONWOA/ms.jpg", 
+            "snippet_image_url": "http://s3-media3.fl.yelpcdn.com/photo/rZMf-_-D7qHuDPaHqufzIA/ms.jpg", 
+            "display_phone": "+1-415-731-6222", 
+            "rating_img_url_large": "https://s3-media4.fl.yelpcdn.com/assets/2/www/img/9f83790ff7f6/ico/stars/v1/stars_large_4_half.png", 
+            "id": "san-francisco-wine-trading-company-san-francisco", 
+            "is_closed": false, 
+            "location": {
+                "cross_streets": "12th Ave & Funston Ave", 
+                "city": "San Francisco", 
+                "display_address": [
+                    "250 Taraval St", 
+                    "West Portal", 
+                    "San Francisco, CA 94116"
+                ], 
+                "geo_accuracy": 8.0, 
+                "neighborhoods": [
+                    "West Portal"
+                ], 
+                "postal_code": "94116", 
+                "country_code": "US", 
+                "address": [
+                    "250 Taraval St"
+                ], 
+                "coordinate": {
+                    "latitude": 37.7435913, 
+                    "longitude": -122.4690018
+                }, 
+                "state_code": "CA"
+            }
+        }, 
+        {
+            "is_claimed": true, 
+            "rating": 4.0, 
+            "mobile_url": "http://m.yelp.com/biz/cameron-hughes-wine-san-francisco?adjust_creative=jm06CzZZen_oNkv_p8thnA&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=jm06CzZZen_oNkv_p8thnA", 
+            "rating_img_url": "https://s3-media4.fl.yelpcdn.com/assets/2/www/img/c2f3dd9799a5/ico/stars/v1/stars_4.png", 
+            "review_count": 17, 
+            "name": "Cameron Hughes Wine", 
+            "rating_img_url_small": "https://s3-media4.fl.yelpcdn.com/assets/2/www/img/f62a5be2f902/ico/stars/v1/stars_small_4.png", 
+            "url": "http://www.yelp.com/biz/cameron-hughes-wine-san-francisco?adjust_creative=jm06CzZZen_oNkv_p8thnA&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=jm06CzZZen_oNkv_p8thnA", 
+            "categories": [
+                [
+                    "Wineries", 
+                    "wineries"
+                ], 
+                [
+                    "Beer, Wine & Spirits", 
+                    "beer_and_wine"
+                ]
+            ], 
+            "phone": "4154951350", 
+            "snippet_text": "Glub, Glub, Glub...\n\nA friend turned me to CH wines this past year and I will have to admit, I am a fan. I have bought and ordered more bottles from here...", 
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/i5JLQto7f3UadX2gFmJqyw/ms.jpg", 
+            "snippet_image_url": "http://s3-media1.fl.yelpcdn.com/photo/o3rUZY8jCq9ab55mxPEtSg/ms.jpg", 
+            "display_phone": "+1-415-495-1350", 
+            "rating_img_url_large": "https://s3-media2.fl.yelpcdn.com/assets/2/www/img/ccf2b76faa2c/ico/stars/v1/stars_large_4.png", 
+            "id": "cameron-hughes-wine-san-francisco", 
+            "is_closed": false, 
+            "location": {
+                "cross_streets": "15th St", 
+                "city": "San Francisco", 
+                "display_address": [
+                    "251 Rhode Island St", 
+                    "Ste 203", 
+                    "SoMa", 
+                    "San Francisco, CA 94103"
+                ], 
+                "geo_accuracy": 8.0, 
+                "neighborhoods": [
+                    "SoMa"
+                ], 
+                "postal_code": "94103", 
+                "country_code": "US", 
+                "address": [
+                    "251 Rhode Island St", 
+                    "Ste 203"
+                ], 
+                "coordinate": {
+                    "latitude": 37.76673, 
+                    "longitude": -122.40257
+                }, 
+                "state_code": "CA"
+            }
+        }, 
+        {
+            "is_claimed": true, 
+            "rating": 4.0, 
+            "mobile_url": "http://m.yelp.com/biz/winery-collective-san-francisco?adjust_creative=jm06CzZZen_oNkv_p8thnA&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=jm06CzZZen_oNkv_p8thnA", 
+            "rating_img_url": "https://s3-media4.fl.yelpcdn.com/assets/2/www/img/c2f3dd9799a5/ico/stars/v1/stars_4.png", 
+            "review_count": 173, 
+            "name": "Winery Collective", 
+            "rating_img_url_small": "https://s3-media4.fl.yelpcdn.com/assets/2/www/img/f62a5be2f902/ico/stars/v1/stars_small_4.png", 
+            "url": "http://www.yelp.com/biz/winery-collective-san-francisco?adjust_creative=jm06CzZZen_oNkv_p8thnA&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=jm06CzZZen_oNkv_p8thnA", 
+            "categories": [
+                [
+                    "Wine Tasting Room", 
+                    "winetastingroom"
+                ]
+            ], 
+            "phone": "4159299463", 
+            "snippet_text": "You have experiences and then you have experiences.  I wen here on a whim and it was dead but with the charismatic dealings of the wine tender Damon, my...", 
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/_B0PSnB8HyPTYejGRNfAZQ/ms.jpg", 
+            "snippet_image_url": "http://s3-media3.fl.yelpcdn.com/photo/N7SHtgWCeE8w-BY6l1MVGg/ms.jpg", 
+            "display_phone": "+1-415-929-9463", 
+            "rating_img_url_large": "https://s3-media2.fl.yelpcdn.com/assets/2/www/img/ccf2b76faa2c/ico/stars/v1/stars_large_4.png", 
+            "id": "winery-collective-san-francisco", 
+            "is_closed": false, 
+            "location": {
+                "cross_streets": "Hyde St & Leavenworth St", 
+                "city": "San Francisco", 
+                "display_address": [
+                    "485 Jefferson St", 
+                    "Russian Hill", 
+                    "San Francisco, CA 94109"
+                ], 
+                "geo_accuracy": 8.0, 
+                "neighborhoods": [
+                    "Russian Hill", 
+                    "Fisherman's Wharf"
+                ], 
+                "postal_code": "94109", 
+                "country_code": "US", 
+                "address": [
+                    "485 Jefferson St"
+                ], 
+                "coordinate": {
+                    "latitude": 37.8075187, 
+                    "longitude": -122.4201387
+                }, 
+                "state_code": "CA"
+            }
+        }, 
+        {
+            "is_claimed": false, 
+            "rating": 4.5, 
+            "mobile_url": "http://m.yelp.com/biz/sol-rouge-winery-san-francisco?adjust_creative=jm06CzZZen_oNkv_p8thnA&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=jm06CzZZen_oNkv_p8thnA", 
+            "rating_img_url": "https://s3-media2.fl.yelpcdn.com/assets/2/www/img/99493c12711e/ico/stars/v1/stars_4_half.png", 
+            "review_count": 39, 
+            "name": "Sol Rouge Winery", 
+            "rating_img_url_small": "https://s3-media2.fl.yelpcdn.com/assets/2/www/img/a5221e66bc70/ico/stars/v1/stars_small_4_half.png", 
+            "url": "http://www.yelp.com/biz/sol-rouge-winery-san-francisco?adjust_creative=jm06CzZZen_oNkv_p8thnA&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=jm06CzZZen_oNkv_p8thnA", 
+            "categories": [
+                [
+                    "Wineries", 
+                    "wineries"
+                ]
+            ], 
+            "phone": "4157562254", 
+            "snippet_text": "Fantastic wines with remote winery feel. Views of the bay bridge and city, picnic tables for chilling outside and sipping  wine on a gorgeous sunny day, and...", 
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/RZFoTNr09mxskGjg-1i0dQ/ms.jpg", 
+            "snippet_image_url": "http://s3-media4.fl.yelpcdn.com/photo/Poq4vpH_PGqkkJiryegZcQ/ms.jpg", 
+            "display_phone": "+1-415-756-2254", 
+            "rating_img_url_large": "https://s3-media4.fl.yelpcdn.com/assets/2/www/img/9f83790ff7f6/ico/stars/v1/stars_large_4_half.png", 
+            "id": "sol-rouge-winery-san-francisco", 
+            "is_closed": false, 
+            "location": {
+                "cross_streets": "Avenue N & Avenue H", 
+                "city": "San Francisco", 
+                "display_address": [
+                    "400 California Ave", 
+                    "Bldg 141", 
+                    "San Francisco, CA 94130"
+                ], 
+                "geo_accuracy": 8.0, 
+                "postal_code": "94130", 
+                "country_code": "US", 
+                "address": [
+                    "400 California Ave", 
+                    "Bldg 141"
+                ], 
+                "coordinate": {
+                    "latitude": 37.818943, 
+                    "longitude": -122.3682098
+                }, 
+                "state_code": "CA"
+            }
+        }, 
+        {
+            "is_claimed": true, 
+            "rating": 5.0, 
+            "mobile_url": "http://m.yelp.com/biz/august-west-wine-san-francisco?adjust_creative=jm06CzZZen_oNkv_p8thnA&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=jm06CzZZen_oNkv_p8thnA", 
+            "rating_img_url": "https://s3-media1.fl.yelpcdn.com/assets/2/www/img/f1def11e4e79/ico/stars/v1/stars_5.png", 
+            "review_count": 3, 
+            "name": "August West Wine", 
+            "rating_img_url_small": "https://s3-media1.fl.yelpcdn.com/assets/2/www/img/c7623205d5cd/ico/stars/v1/stars_small_5.png", 
+            "url": "http://www.yelp.com/biz/august-west-wine-san-francisco?adjust_creative=jm06CzZZen_oNkv_p8thnA&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=jm06CzZZen_oNkv_p8thnA", 
+            "categories": [
+                [
+                    "Wineries", 
+                    "wineries"
+                ]
+            ], 
+            "phone": "4152252891", 
+            "snippet_text": "Ed Kurtzman is the winemaker/proprietor at August West Wines, one of the few (and one of the best) urban wineries in San Francisco.  Ed's other label, also...", 
+            "snippet_image_url": "http://s3-media1.fl.yelpcdn.com/photo/y9nkWH_uTnPGIBIy_d-zGw/ms.jpg", 
+            "display_phone": "+1-415-225-2891", 
+            "rating_img_url_large": "https://s3-media3.fl.yelpcdn.com/assets/2/www/img/22affc4e6c38/ico/stars/v1/stars_large_5.png", 
+            "id": "august-west-wine-san-francisco", 
+            "is_closed": false, 
+            "location": {
+                "cross_streets": "Apparel Way & Palou Ave", 
+                "city": "San Francisco", 
+                "display_address": [
+                    "540 Barneveld Ave", 
+                    "Bayview-Hunters Point", 
+                    "San Francisco, CA 94124"
+                ], 
+                "geo_accuracy": 8.0, 
+                "neighborhoods": [
+                    "Bayview-Hunters Point"
+                ], 
+                "postal_code": "94124", 
+                "country_code": "US", 
+                "address": [
+                    "540 Barneveld Ave"
+                ], 
+                "coordinate": {
+                    "latitude": 37.7405700683594, 
+                    "longitude": -122.404518127441
+                }, 
+                "state_code": "CA"
+            }
+        }, 
+        {
+            "is_claimed": false, 
+            "rating": 3.0, 
+            "mobile_url": "http://m.yelp.com/biz/vin12-san-francisco?adjust_creative=jm06CzZZen_oNkv_p8thnA&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=jm06CzZZen_oNkv_p8thnA", 
+            "rating_img_url": "https://s3-media3.fl.yelpcdn.com/assets/2/www/img/34bc8086841c/ico/stars/v1/stars_3.png", 
+            "review_count": 21, 
+            "name": "VIN12", 
+            "rating_img_url_small": "https://s3-media3.fl.yelpcdn.com/assets/2/www/img/902abeed0983/ico/stars/v1/stars_small_3.png", 
+            "url": "http://www.yelp.com/biz/vin12-san-francisco?adjust_creative=jm06CzZZen_oNkv_p8thnA&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=jm06CzZZen_oNkv_p8thnA", 
+            "categories": [
+                [
+                    "Wineries", 
+                    "wineries"
+                ]
+            ], 
+            "phone": "4157566542", 
+            "snippet_text": "Last Friday I went to the VIN12 wine tasting event with a few friends.  The venue it was in was small, a bit crowded.  I know this is out of the venues...", 
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/yWxp7FkCc57b56qC_EUsgg/ms.jpg", 
+            "snippet_image_url": "http://s3-media4.fl.yelpcdn.com/photo/-tswWqTcAYfHBOmsZo8_Ew/ms.jpg", 
+            "display_phone": "+1-415-756-6542", 
+            "rating_img_url_large": "https://s3-media1.fl.yelpcdn.com/assets/2/www/img/e8b5b79d37ed/ico/stars/v1/stars_large_3.png", 
+            "id": "vin12-san-francisco", 
+            "is_closed": false, 
+            "location": {
+                "city": "San Francisco", 
+                "display_address": [
+                    "SoMa", 
+                    "San Francisco, CA 94105"
+                ], 
+                "geo_accuracy": 5.0, 
+                "neighborhoods": [
+                    "SoMa"
+                ], 
+                "postal_code": "94105", 
+                "country_code": "US", 
+                "address": [], 
+                "coordinate": {
+                    "latitude": 37.7886352539062, 
+                    "longitude": -122.393890380859
+                }, 
+                "state_code": "CA"
+            }
+        }, 
+        {
+            "is_claimed": true, 
+            "rating": 4.5, 
+            "mobile_url": "http://m.yelp.com/biz/dashe-cellars-oakland?adjust_creative=jm06CzZZen_oNkv_p8thnA&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=jm06CzZZen_oNkv_p8thnA", 
+            "rating_img_url": "https://s3-media2.fl.yelpcdn.com/assets/2/www/img/99493c12711e/ico/stars/v1/stars_4_half.png", 
+            "review_count": 72, 
+            "name": "Dashe Cellars", 
+            "rating_img_url_small": "https://s3-media2.fl.yelpcdn.com/assets/2/www/img/a5221e66bc70/ico/stars/v1/stars_small_4_half.png", 
+            "url": "http://www.yelp.com/biz/dashe-cellars-oakland?adjust_creative=jm06CzZZen_oNkv_p8thnA&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=jm06CzZZen_oNkv_p8thnA", 
+            "categories": [
+                [
+                    "Wineries", 
+                    "wineries"
+                ]
+            ], 
+            "phone": "5104521800", 
+            "snippet_text": "Go, go, go.  The staff is spectacular.  They greet you when you walk thru the door and talk about the different ways you can try wines.  \n\nThere's an indoor...", 
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/JVPkj_QknPtFasGg0HTZTw/ms.jpg", 
+            "snippet_image_url": "http://s3-media3.fl.yelpcdn.com/photo/k7hU7i_totoA0SvX_rFg9A/ms.jpg", 
+            "display_phone": "+1-510-452-1800", 
+            "rating_img_url_large": "https://s3-media4.fl.yelpcdn.com/assets/2/www/img/9f83790ff7f6/ico/stars/v1/stars_large_4_half.png", 
+            "id": "dashe-cellars-oakland", 
+            "is_closed": false, 
+            "location": {
+                "cross_streets": "Fallon St & Oak St", 
+                "city": "Oakland", 
+                "display_address": [
+                    "55 4th St", 
+                    "Oakland, CA 94607"
+                ], 
+                "geo_accuracy": 8.0, 
+                "postal_code": "94607", 
+                "country_code": "US", 
+                "address": [
+                    "55 4th St"
+                ], 
+                "coordinate": {
+                    "latitude": 37.7936401367188, 
+                    "longitude": -122.266471862793
+                }, 
+                "state_code": "CA"
+            }
+        }, 
+        {
+            "is_claimed": false, 
+            "rating": 5.0, 
+            "mobile_url": "http://m.yelp.com/biz/eight-arms-cellars-berkeley?adjust_creative=jm06CzZZen_oNkv_p8thnA&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=jm06CzZZen_oNkv_p8thnA", 
+            "rating_img_url": "https://s3-media1.fl.yelpcdn.com/assets/2/www/img/f1def11e4e79/ico/stars/v1/stars_5.png", 
+            "review_count": 4, 
+            "name": "Eight Arms Cellars", 
+            "rating_img_url_small": "https://s3-media1.fl.yelpcdn.com/assets/2/www/img/c7623205d5cd/ico/stars/v1/stars_small_5.png", 
+            "url": "http://www.yelp.com/biz/eight-arms-cellars-berkeley?adjust_creative=jm06CzZZen_oNkv_p8thnA&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=jm06CzZZen_oNkv_p8thnA", 
+            "categories": [
+                [
+                    "Wineries", 
+                    "wineries"
+                ]
+            ], 
+            "phone": "5109323019", 
+            "snippet_text": "It is rare to find someone who not only makes their own wine, but also designed the beautiful bottles that they come in!\n\nIain Bolton, winemaker of Eight...", 
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/AyDQpId84jW3TUECtEt8MA/ms.jpg", 
+            "snippet_image_url": "http://s3-media4.fl.yelpcdn.com/photo/Ejo_mC97qt6vkc3ZtezX8w/ms.jpg", 
+            "display_phone": "+1-510-932-3019", 
+            "rating_img_url_large": "https://s3-media3.fl.yelpcdn.com/assets/2/www/img/22affc4e6c38/ico/stars/v1/stars_large_5.png", 
+            "id": "eight-arms-cellars-berkeley", 
+            "is_closed": false, 
+            "location": {
+                "cross_streets": "Ashby Ave & Julia St", 
+                "city": "Berkeley", 
+                "display_address": [
+                    "2961 California St", 
+                    "Berkeley, CA 94703"
+                ], 
+                "geo_accuracy": 8.0, 
+                "postal_code": "94703", 
+                "country_code": "US", 
+                "address": [
+                    "2961 California St"
+                ], 
+                "coordinate": {
+                    "latitude": 37.8539543151855, 
+                    "longitude": -122.276725769043
+                }, 
+                "state_code": "CA"
+            }
+        }
+    ]
+}
+
+{
+    "region": {
+        "span": {
+            "latitude_delta": 0.12468730999999877, 
+            "longitude_delta": 0.2228059900000119
+        }, 
+        "center": {
+            "latitude": 37.79727655, 
+            "longitude": -122.36774545
+        }
+    }, 
+    "total": 8, 
+    "businesses": [
+        {
+            "is_claimed": true, 
+            "rating": 4.5, 
+            "mobile_url": "http://m.yelp.com/biz/san-francisco-wine-trading-company-san-francisco?adjust_creative=jm06CzZZen_oNkv_p8thnA&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=jm06CzZZen_oNkv_p8thnA", 
+            "rating_img_url": "https://s3-media2.fl.yelpcdn.com/assets/2/www/img/99493c12711e/ico/stars/v1/stars_4_half.png", 
+            "review_count": 97, 
+            "name": "San Francisco Wine Trading Company", 
+            "rating_img_url_small": "https://s3-media2.fl.yelpcdn.com/assets/2/www/img/a5221e66bc70/ico/stars/v1/stars_small_4_half.png", 
+            "url": "http://www.yelp.com/biz/san-francisco-wine-trading-company-san-francisco?adjust_creative=jm06CzZZen_oNkv_p8thnA&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=jm06CzZZen_oNkv_p8thnA", 
+            "categories": [
+                [
+                    "Wineries", 
+                    "wineries"
+                ], 
+                [
+                    "Beer, Wine & Spirits", 
+                    "beer_and_wine"
+                ]
+            ], 
+            "phone": "4157316222", 
+            "snippet_text": "I love this place. Why? Because: \n\n- The people who work here are great--everyone is friendly and welcoming. \n\n- They know their alcohol. And if you get...", 
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/Te9Kr2FagXazLZb7iONWOA/ms.jpg", 
+            "snippet_image_url": "http://s3-media3.fl.yelpcdn.com/photo/rZMf-_-D7qHuDPaHqufzIA/ms.jpg", 
+            "display_phone": "+1-415-731-6222", 
+            "rating_img_url_large": "https://s3-media4.fl.yelpcdn.com/assets/2/www/img/9f83790ff7f6/ico/stars/v1/stars_large_4_half.png", 
+            "id": "san-francisco-wine-trading-company-san-francisco", 
+            "is_closed": false, 
+            "location": {
+                "cross_streets": "12th Ave & Funston Ave", 
+                "city": "San Francisco", 
+                "display_address": [
+                    "250 Taraval St", 
+                    "West Portal", 
+                    "San Francisco, CA 94116"
+                ], 
+                "geo_accuracy": 8.0, 
+                "neighborhoods": [
+                    "West Portal"
+                ], 
+                "postal_code": "94116", 
+                "country_code": "US", 
+                "address": [
+                    "250 Taraval St"
+                ], 
+                "coordinate": {
+                    "latitude": 37.7435913, 
+                    "longitude": -122.4690018
+                }, 
+                "state_code": "CA"
+            }
+        }, 
+        {
+            "is_claimed": true, 
+            "rating": 4.0, 
+            "mobile_url": "http://m.yelp.com/biz/cameron-hughes-wine-san-francisco?adjust_creative=jm06CzZZen_oNkv_p8thnA&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=jm06CzZZen_oNkv_p8thnA", 
+            "rating_img_url": "https://s3-media4.fl.yelpcdn.com/assets/2/www/img/c2f3dd9799a5/ico/stars/v1/stars_4.png", 
+            "review_count": 17, 
+            "name": "Cameron Hughes Wine", 
+            "rating_img_url_small": "https://s3-media4.fl.yelpcdn.com/assets/2/www/img/f62a5be2f902/ico/stars/v1/stars_small_4.png", 
+            "url": "http://www.yelp.com/biz/cameron-hughes-wine-san-francisco?adjust_creative=jm06CzZZen_oNkv_p8thnA&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=jm06CzZZen_oNkv_p8thnA", 
+            "categories": [
+                [
+                    "Wineries", 
+                    "wineries"
+                ], 
+                [
+                    "Beer, Wine & Spirits", 
+                    "beer_and_wine"
+                ]
+            ], 
+            "phone": "4154951350", 
+            "snippet_text": "Glub, Glub, Glub...\n\nA friend turned me to CH wines this past year and I will have to admit, I am a fan. I have bought and ordered more bottles from here...", 
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/i5JLQto7f3UadX2gFmJqyw/ms.jpg", 
+            "snippet_image_url": "http://s3-media1.fl.yelpcdn.com/photo/o3rUZY8jCq9ab55mxPEtSg/ms.jpg", 
+            "display_phone": "+1-415-495-1350", 
+            "rating_img_url_large": "https://s3-media2.fl.yelpcdn.com/assets/2/www/img/ccf2b76faa2c/ico/stars/v1/stars_large_4.png", 
+            "id": "cameron-hughes-wine-san-francisco", 
+            "is_closed": false, 
+            "location": {
+                "cross_streets": "15th St", 
+                "city": "San Francisco", 
+                "display_address": [
+                    "251 Rhode Island St", 
+                    "Ste 203", 
+                    "SoMa", 
+                    "San Francisco, CA 94103"
+                ], 
+                "geo_accuracy": 8.0, 
+                "neighborhoods": [
+                    "SoMa"
+                ], 
+                "postal_code": "94103", 
+                "country_code": "US", 
+                "address": [
+                    "251 Rhode Island St", 
+                    "Ste 203"
+                ], 
+                "coordinate": {
+                    "latitude": 37.76673, 
+                    "longitude": -122.40257
+                }, 
+                "state_code": "CA"
+            }
+        }, 
+        {
+            "is_claimed": true, 
+            "rating": 4.0, 
+            "mobile_url": "http://m.yelp.com/biz/winery-collective-san-francisco?adjust_creative=jm06CzZZen_oNkv_p8thnA&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=jm06CzZZen_oNkv_p8thnA", 
+            "rating_img_url": "https://s3-media4.fl.yelpcdn.com/assets/2/www/img/c2f3dd9799a5/ico/stars/v1/stars_4.png", 
+            "review_count": 173, 
+            "name": "Winery Collective", 
+            "rating_img_url_small": "https://s3-media4.fl.yelpcdn.com/assets/2/www/img/f62a5be2f902/ico/stars/v1/stars_small_4.png", 
+            "url": "http://www.yelp.com/biz/winery-collective-san-francisco?adjust_creative=jm06CzZZen_oNkv_p8thnA&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=jm06CzZZen_oNkv_p8thnA", 
+            "categories": [
+                [
+                    "Wine Tasting Room", 
+                    "winetastingroom"
+                ]
+            ], 
+            "phone": "4159299463", 
+            "snippet_text": "You have experiences and then you have experiences.  I wen here on a whim and it was dead but with the charismatic dealings of the wine tender Damon, my...", 
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/_B0PSnB8HyPTYejGRNfAZQ/ms.jpg", 
+            "snippet_image_url": "http://s3-media3.fl.yelpcdn.com/photo/N7SHtgWCeE8w-BY6l1MVGg/ms.jpg", 
+            "display_phone": "+1-415-929-9463", 
+            "rating_img_url_large": "https://s3-media2.fl.yelpcdn.com/assets/2/www/img/ccf2b76faa2c/ico/stars/v1/stars_large_4.png", 
+            "id": "winery-collective-san-francisco", 
+            "is_closed": false, 
+            "location": {
+                "cross_streets": "Hyde St & Leavenworth St", 
+                "city": "San Francisco", 
+                "display_address": [
+                    "485 Jefferson St", 
+                    "Russian Hill", 
+                    "San Francisco, CA 94109"
+                ], 
+                "geo_accuracy": 8.0, 
+                "neighborhoods": [
+                    "Russian Hill", 
+                    "Fisherman's Wharf"
+                ], 
+                "postal_code": "94109", 
+                "country_code": "US", 
+                "address": [
+                    "485 Jefferson St"
+                ], 
+                "coordinate": {
+                    "latitude": 37.8075187, 
+                    "longitude": -122.4201387
+                }, 
+                "state_code": "CA"
+            }
+        }, 
+        {
+            "is_claimed": false, 
+            "rating": 4.5, 
+            "mobile_url": "http://m.yelp.com/biz/sol-rouge-winery-san-francisco?adjust_creative=jm06CzZZen_oNkv_p8thnA&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=jm06CzZZen_oNkv_p8thnA", 
+            "rating_img_url": "https://s3-media2.fl.yelpcdn.com/assets/2/www/img/99493c12711e/ico/stars/v1/stars_4_half.png", 
+            "review_count": 39, 
+            "name": "Sol Rouge Winery", 
+            "rating_img_url_small": "https://s3-media2.fl.yelpcdn.com/assets/2/www/img/a5221e66bc70/ico/stars/v1/stars_small_4_half.png", 
+            "url": "http://www.yelp.com/biz/sol-rouge-winery-san-francisco?adjust_creative=jm06CzZZen_oNkv_p8thnA&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=jm06CzZZen_oNkv_p8thnA", 
+            "categories": [
+                [
+                    "Wineries", 
+                    "wineries"
+                ]
+            ], 
+            "phone": "4157562254", 
+            "snippet_text": "Fantastic wines with remote winery feel. Views of the bay bridge and city, picnic tables for chilling outside and sipping  wine on a gorgeous sunny day, and...", 
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/RZFoTNr09mxskGjg-1i0dQ/ms.jpg", 
+            "snippet_image_url": "http://s3-media4.fl.yelpcdn.com/photo/Poq4vpH_PGqkkJiryegZcQ/ms.jpg", 
+            "display_phone": "+1-415-756-2254", 
+            "rating_img_url_large": "https://s3-media4.fl.yelpcdn.com/assets/2/www/img/9f83790ff7f6/ico/stars/v1/stars_large_4_half.png", 
+            "id": "sol-rouge-winery-san-francisco", 
+            "is_closed": false, 
+            "location": {
+                "cross_streets": "Avenue N & Avenue H", 
+                "city": "San Francisco", 
+                "display_address": [
+                    "400 California Ave", 
+                    "Bldg 141", 
+                    "San Francisco, CA 94130"
+                ], 
+                "geo_accuracy": 8.0, 
+                "postal_code": "94130", 
+                "country_code": "US", 
+                "address": [
+                    "400 California Ave", 
+                    "Bldg 141"
+                ], 
+                "coordinate": {
+                    "latitude": 37.818943, 
+                    "longitude": -122.3682098
+                }, 
+                "state_code": "CA"
+            }
+        }, 
+        {
+            "is_claimed": true, 
+            "rating": 5.0, 
+            "mobile_url": "http://m.yelp.com/biz/august-west-wine-san-francisco?adjust_creative=jm06CzZZen_oNkv_p8thnA&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=jm06CzZZen_oNkv_p8thnA", 
+            "rating_img_url": "https://s3-media1.fl.yelpcdn.com/assets/2/www/img/f1def11e4e79/ico/stars/v1/stars_5.png", 
+            "review_count": 3, 
+            "name": "August West Wine", 
+            "rating_img_url_small": "https://s3-media1.fl.yelpcdn.com/assets/2/www/img/c7623205d5cd/ico/stars/v1/stars_small_5.png", 
+            "url": "http://www.yelp.com/biz/august-west-wine-san-francisco?adjust_creative=jm06CzZZen_oNkv_p8thnA&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=jm06CzZZen_oNkv_p8thnA", 
+            "categories": [
+                [
+                    "Wineries", 
+                    "wineries"
+                ]
+            ], 
+            "phone": "4152252891", 
+            "snippet_text": "Ed Kurtzman is the winemaker/proprietor at August West Wines, one of the few (and one of the best) urban wineries in San Francisco.  Ed's other label, also...", 
+            "snippet_image_url": "http://s3-media1.fl.yelpcdn.com/photo/y9nkWH_uTnPGIBIy_d-zGw/ms.jpg", 
+            "display_phone": "+1-415-225-2891", 
+            "rating_img_url_large": "https://s3-media3.fl.yelpcdn.com/assets/2/www/img/22affc4e6c38/ico/stars/v1/stars_large_5.png", 
+            "id": "august-west-wine-san-francisco", 
+            "is_closed": false, 
+            "location": {
+                "cross_streets": "Apparel Way & Palou Ave", 
+                "city": "San Francisco", 
+                "display_address": [
+                    "540 Barneveld Ave", 
+                    "Bayview-Hunters Point", 
+                    "San Francisco, CA 94124"
+                ], 
+                "geo_accuracy": 8.0, 
+                "neighborhoods": [
+                    "Bayview-Hunters Point"
+                ], 
+                "postal_code": "94124", 
+                "country_code": "US", 
+                "address": [
+                    "540 Barneveld Ave"
+                ], 
+                "coordinate": {
+                    "latitude": 37.7405700683594, 
+                    "longitude": -122.404518127441
+                }, 
+                "state_code": "CA"
+            }
+        }, 
+        {
+            "is_claimed": false, 
+            "rating": 3.0, 
+            "mobile_url": "http://m.yelp.com/biz/vin12-san-francisco?adjust_creative=jm06CzZZen_oNkv_p8thnA&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=jm06CzZZen_oNkv_p8thnA", 
+            "rating_img_url": "https://s3-media3.fl.yelpcdn.com/assets/2/www/img/34bc8086841c/ico/stars/v1/stars_3.png", 
+            "review_count": 21, 
+            "name": "VIN12", 
+            "rating_img_url_small": "https://s3-media3.fl.yelpcdn.com/assets/2/www/img/902abeed0983/ico/stars/v1/stars_small_3.png", 
+            "url": "http://www.yelp.com/biz/vin12-san-francisco?adjust_creative=jm06CzZZen_oNkv_p8thnA&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=jm06CzZZen_oNkv_p8thnA", 
+            "categories": [
+                [
+                    "Wineries", 
+                    "wineries"
+                ]
+            ], 
+            "phone": "4157566542", 
+            "snippet_text": "Last Friday I went to the VIN12 wine tasting event with a few friends.  The venue it was in was small, a bit crowded.  I know this is out of the venues...", 
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/yWxp7FkCc57b56qC_EUsgg/ms.jpg", 
+            "snippet_image_url": "http://s3-media4.fl.yelpcdn.com/photo/-tswWqTcAYfHBOmsZo8_Ew/ms.jpg", 
+            "display_phone": "+1-415-756-6542", 
+            "rating_img_url_large": "https://s3-media1.fl.yelpcdn.com/assets/2/www/img/e8b5b79d37ed/ico/stars/v1/stars_large_3.png", 
+            "id": "vin12-san-francisco", 
+            "is_closed": false, 
+            "location": {
+                "city": "San Francisco", 
+                "display_address": [
+                    "SoMa", 
+                    "San Francisco, CA 94105"
+                ], 
+                "geo_accuracy": 5.0, 
+                "neighborhoods": [
+                    "SoMa"
+                ], 
+                "postal_code": "94105", 
+                "country_code": "US", 
+                "address": [], 
+                "coordinate": {
+                    "latitude": 37.7886352539062, 
+                    "longitude": -122.393890380859
+                }, 
+                "state_code": "CA"
+            }
+        }, 
+        {
+            "is_claimed": true, 
+            "rating": 4.5, 
+            "mobile_url": "http://m.yelp.com/biz/dashe-cellars-oakland?adjust_creative=jm06CzZZen_oNkv_p8thnA&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=jm06CzZZen_oNkv_p8thnA", 
+            "rating_img_url": "https://s3-media2.fl.yelpcdn.com/assets/2/www/img/99493c12711e/ico/stars/v1/stars_4_half.png", 
+            "review_count": 72, 
+            "name": "Dashe Cellars", 
+            "rating_img_url_small": "https://s3-media2.fl.yelpcdn.com/assets/2/www/img/a5221e66bc70/ico/stars/v1/stars_small_4_half.png", 
+            "url": "http://www.yelp.com/biz/dashe-cellars-oakland?adjust_creative=jm06CzZZen_oNkv_p8thnA&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=jm06CzZZen_oNkv_p8thnA", 
+            "categories": [
+                [
+                    "Wineries", 
+                    "wineries"
+                ]
+            ], 
+            "phone": "5104521800", 
+            "snippet_text": "Go, go, go.  The staff is spectacular.  They greet you when you walk thru the door and talk about the different ways you can try wines.  \n\nThere's an indoor...", 
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/JVPkj_QknPtFasGg0HTZTw/ms.jpg", 
+            "snippet_image_url": "http://s3-media3.fl.yelpcdn.com/photo/k7hU7i_totoA0SvX_rFg9A/ms.jpg", 
+            "display_phone": "+1-510-452-1800", 
+            "rating_img_url_large": "https://s3-media4.fl.yelpcdn.com/assets/2/www/img/9f83790ff7f6/ico/stars/v1/stars_large_4_half.png", 
+            "id": "dashe-cellars-oakland", 
+            "is_closed": false, 
+            "location": {
+                "cross_streets": "Fallon St & Oak St", 
+                "city": "Oakland", 
+                "display_address": [
+                    "55 4th St", 
+                    "Oakland, CA 94607"
+                ], 
+                "geo_accuracy": 8.0, 
+                "postal_code": "94607", 
+                "country_code": "US", 
+                "address": [
+                    "55 4th St"
+                ], 
+                "coordinate": {
+                    "latitude": 37.7936401367188, 
+                    "longitude": -122.266471862793
+                }, 
+                "state_code": "CA"
+            }
+        }, 
+        {
+            "is_claimed": false, 
+            "rating": 5.0, 
+            "mobile_url": "http://m.yelp.com/biz/eight-arms-cellars-berkeley?adjust_creative=jm06CzZZen_oNkv_p8thnA&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=jm06CzZZen_oNkv_p8thnA", 
+            "rating_img_url": "https://s3-media1.fl.yelpcdn.com/assets/2/www/img/f1def11e4e79/ico/stars/v1/stars_5.png", 
+            "review_count": 4, 
+            "name": "Eight Arms Cellars", 
+            "rating_img_url_small": "https://s3-media1.fl.yelpcdn.com/assets/2/www/img/c7623205d5cd/ico/stars/v1/stars_small_5.png", 
+            "url": "http://www.yelp.com/biz/eight-arms-cellars-berkeley?adjust_creative=jm06CzZZen_oNkv_p8thnA&utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=jm06CzZZen_oNkv_p8thnA", 
+            "categories": [
+                [
+                    "Wineries", 
+                    "wineries"
+                ]
+            ], 
+            "phone": "5109323019", 
+            "snippet_text": "It is rare to find someone who not only makes their own wine, but also designed the beautiful bottles that they come in!\n\nIain Bolton, winemaker of Eight...", 
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/AyDQpId84jW3TUECtEt8MA/ms.jpg", 
+            "snippet_image_url": "http://s3-media4.fl.yelpcdn.com/photo/Ejo_mC97qt6vkc3ZtezX8w/ms.jpg", 
+            "display_phone": "+1-510-932-3019", 
+            "rating_img_url_large": "https://s3-media3.fl.yelpcdn.com/assets/2/www/img/22affc4e6c38/ico/stars/v1/stars_large_5.png", 
+            "id": "eight-arms-cellars-berkeley", 
+            "is_closed": false, 
+            "location": {
+                "cross_streets": "Ashby Ave & Julia St", 
+                "city": "Berkeley", 
+                "display_address": [
+                    "2961 California St", 
+                    "Berkeley, CA 94703"
+                ], 
+                "geo_accuracy": 8.0, 
+                "postal_code": "94703", 
+                "country_code": "US", 
+                "address": [
+                    "2961 California St"
+                ], 
+                "coordinate": {
+                    "latitude": 37.8539543151855, 
+                    "longitude": -122.276725769043
+                }, 
+                "state_code": "CA"
+            }
+        }
+    ]
+}

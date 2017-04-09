@@ -8,6 +8,7 @@ var markers = [];
 var marker;
 
 var placeMarkers = [];
+
 //location secion - TODO I have to put this inside viewmode
   var locations = [
      {title: 'Banana Grill', 
@@ -50,29 +51,104 @@ var placeMarkers = [];
 ];
 
 
-//this code starts the map
-function initMap() {
-	map = new google.maps.Map(document.getElementById('map'), {
-		center: {lat: 53.350140, lng: -6.251495},
-		zoom: 13,
-		mapTypeControl: false
-});
+//Knockout starts
+//Starts RestaurantViewModel
+var RestaurantViewModel = function() {
+	var self = this; //Assign self to this
+	this.restaurantList = ko.observableArray([]);
 
+	locations.forEach(function(restaurantItem) {
+		self.restaurantList.push(restaurantItem);
+	});
+
+	this.currentRestaurant = ko.observable( this.restaurantList()[0] );
+
+	for (var i = 0; i < locations.length; i++) {
+		this.restaurantList()[i].marker = markers[i];
+	}
+
+RestaurantViewModel.prototype.initMap = function() {
+     // style courtesy of snazzy maps "Crisp and Vivid" by "Nathan"
+  // https://snazzymaps.com/style/2053/crisp-and-vivid
+  var styles = [
+    {
+        "featureType": "landscape",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#e9e5dc"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape.natural.terrain",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#44a04b"
+            }
+        ]
+    },
+    {
+        "featureType": "poi.park",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#7bb718"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#ffffff"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "color": "#a3a2a2"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#0099dd"
+            }
+        ]
+    }
+  ];
+  //End style
+  //Starts map
+this.map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: 53.350140, lng: -6.251495},
+    zoom: 13,
+    mapTypeControl: false
+    //this.infoWindow = google.maps.InfoWindow();
+});
 //this code starts the infowindow the the user clicks on it
 largeInfowindow = new google.maps.InfoWindow();
-maxwidth: 200;
+
 
 var defaultIcon = makeMarkerIcon('0091ff');
 
 var highlightedIcon = makeMarkerIcon('ffff24');
-	
+    
 var bounds = new google.maps.LatLngBounds();
 
 //this loop 
 for (var i = 0; i < locations.length; i++) {
-	var position = locations[i].location;
+    var position = locations[i].location;
     var content = locations[i].content;
-	var title = locations[i].title;
+    var title = locations[i].title;
     var marker = new google.maps.Marker({
         map: map,
         position: position,
@@ -88,53 +164,51 @@ markers.push(marker);
 bounds.extend(marker.position);
 
 marker.addListener('click', function() {
-	populateInfoWindow(this, largeInfowindow);
+    populateInfoWindow(this, largeInfowindow);
 });
 
 marker.addListener('mouseover', function() {
-	this.setIcon(highlightedIcon);
+    this.setIcon(highlightedIcon);
 });
 marker.addListener('mouseout', function() {
-	this.setIcon(defaultIcon);
+    this.setIcon(defaultIcon);
 });
 }
 
-map.fitBounds(bounds);
+this.map.fitBounds(bounds);
 
 document.getElementById('show-listings').addEventListener('click', showListings);
 document.getElementById('hide-listings').addEventListener('click', function() {
-	hideMarkers(markers);
+    hideMarkers(markers);
 });
-//creating a variable view mode for the restaurants
-var restaurantVM = new RestaurantViewModel();
-ko.applyBindings(restaurantVM);
+
+
 }
 
-
 function populateInfoWindow(marker, infowindow) {
-	if (infowindow.marker != marker) {
-		infowindow.setContent('');
-		infowindow.marker = marker;
-		setTimeout(function() {
+    if (infowindow.marker != marker) {
+        infowindow.setContent('');
+        infowindow.marker = marker;
+        setTimeout(function() {
                 marker.setAnimation(null);
-            	}, 2600);
+                }, 2600);
 
-		//infowindow.setContent('<div>' + marker.title + '</div>');
-		//infowindow.open(map, marker);
+        //infowindow.setContent('<div>' + marker.title + '</div>');
+        //infowindow.open(map, marker);
 
-	infowindow.addListener('closeclick', function() {
-		infowindow.marker = null;
-	});
+    infowindow.addListener('closeclick', function() {
+        infowindow.marker = null;
+    });
 
-	var streetViewService = new google.maps.StreetViewService();
+    var streetViewService = new google.maps.StreetViewService();
     var radius = 50;
         // In case the status is OK, which means the pano was found, compute the
         // position of the streetview image, then calculate the heading, then get a
         // panorama from that and set the options
 
- 	function getStreetView(data, status) {
+    function getStreetView(data, status) {
         if (status == google.maps.StreetViewStatus.OK) {
-        	clearTimeout(errorTimeout);
+            clearTimeout(errorTimeout);
             var nearStreetViewLocation = data.location.latLng;
             var heading = google.maps.geometry.spherical.computeHeading(nearStreetViewLocation, marker.position);
                 infowindow.setContent('<h2>' + marker.title + '</h2>' + '<div id="pano">' + '</div>'
@@ -180,29 +254,15 @@ function hideMarkers(markers) {
 }
 
 function makeMarkerIcon(markerColor) {
-	var markerImage = new google.maps.MarkerImage(
-		'https://chart.googleapis.com/chart?chst=d_map_spin&chld=1.15|0|' + markerColor +
-		'|40|_|%E2%80%A2',
-		new google.maps.Size(21, 34),
-		new google.maps.Point(0, 0),
-		new google.maps.Point(10, 34),
-		new google.maps.Size(21, 34));
-	return markerImage;
+    var markerImage = new google.maps.MarkerImage(
+        'https://chart.googleapis.com/chart?chst=d_map_spin&chld=1.15|0|' + markerColor +
+        '|40|_|%E2%80%A2',
+        new google.maps.Size(21, 34),
+        new google.maps.Point(0, 0),
+        new google.maps.Point(10, 34),
+        new google.maps.Size(21, 34));
+    return markerImage;
 }
-//Knockout starts
-var RestaurantViewModel = function() {
-	var self = this;
-	this.restaurantList = ko.observableArray([]);
-
-	locations.forEach(function(restaurantItem) {
-		self.restaurantList.push(restaurantItem);
-	});
-
-	this.currentRestaurant = ko.observable( this.restaurantList()[0] );
-
-	for (var i = 0; i < locations.length; i++) {
-		this.restaurantList()[i].marker = markers[i];
-	}
 
 
 	this.selectedRestaurant = function(clickedRestaurant) {
@@ -212,7 +272,7 @@ var RestaurantViewModel = function() {
 				this.currentRestaurant = self.restaurantList()[i];
 			}
 		}
-		this.marker.setAnimation(google.maps.Animation.BOUNCE);
+		marker.setAnimation(google.maps.Animation.BOUNCE);
 		google.maps.event.trigger(this.marker, 'click');
 		
 	};
@@ -245,6 +305,7 @@ var RestaurantViewModel = function() {
 function errorHandling() {
 	alert("Please try again later!!");
 }
+
    
    //Setting up Foursquare for infowindow
     var CLIENT_ID = 'ZHNYRYRJWNHQGJHTPVVWLI1A3QDG3EJS42TFTIIDWEGGJOVX';
@@ -272,15 +333,24 @@ function errorHandling() {
             var address = data.response.venue.location.address ? data.response.venue.location.address : " ";
             var city = data.response.venue.location.city ? data.response.venue.location.city : " ";
             var state = data.response.venue.location.state ? data.response.venue.location.state : " ";
-            var zipCode = data.response.venue.location.postalCode ? data.response.venue.location.postalCode : " ";
             var phone = data.response.venue.contact.formattedPhone ? data.response.venue.contact.formattedPhone : " ";
+            var url = data.response.venue.url;
+            
 
-            largeInfowindow.setContent('<div>' + '<b>' + venue + '</b>' + '</div>' + '<div>' + address + '</div>' + '<div>' + city + ', ' + state + ' ' + zipCode + '<div>' + phone);
+            largeInfowindow.setContent('<div>' + '<b>' + venue + '</b>' + '</div>' + '<div>' + address + '</div>' + '<div>' + city + ', ' + state + ' ' + '<div>' + phone + '<div>' + url);
             largeInfowindow.open(map, marker);
             console.log(data);
           }
         }).fail(function (e) {
-          largeInfowindow.setContent('<div><h4>Well this is embarrassing...</h4></div>' + '<div><h4>Foursquare could not be loaded.</h4></div>');
+          largeInfowindow.setContent('<div><h4>Well this is embarrassing...</h4></div>' + '<div><h4>Foursquare could not be loaded, try again later.</h4></div>');
           largeInfowindow.open(map, marker);
         });
     };
+var restaurantVM = new RestaurantViewModel();
+ko.applyBindings(restaurantVM);
+
+var selctor = '#restaurant-list li';
+    $(selctor).on('click', function(){
+        $(selctor).removeClass('active');
+        $(this).addClass('active');
+    });
