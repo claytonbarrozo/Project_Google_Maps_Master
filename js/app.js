@@ -8,6 +8,8 @@ var markers = [];
 var marker;
 
 var placeMarkers = [];
+
+
 //End-Global 
 
 //location section Start
@@ -85,9 +87,9 @@ var RestaurantViewModel = function() {
 
     for (var i = 0; i < locations.length; i++) {
         this.restaurantList()[i].marker = markers[i];
-        
+        }
     
-
+ 
     RestaurantViewModel.prototype.initMap = function() {
         // style courtesy of snazzy maps "Crisp and Vivid" by "Nathan"
         // https://snazzymaps.com/style/2053/crisp-and-vivid
@@ -155,7 +157,7 @@ var RestaurantViewModel = function() {
 
         var bounds = new google.maps.LatLngBounds();
 
-        //this loop 
+        //A for loop that uses LocationData to generate multiple markers on the map
         for (var i = 0; i < locations.length; i++) {
             var position = locations[i].location;
             var content = locations[i].content;
@@ -171,6 +173,10 @@ var RestaurantViewModel = function() {
             });
 
             markers.push(marker);
+
+            this.restaurantList()[i].marker = marker; //Define marker
+
+
 
             bounds.extend(marker.position);
 
@@ -251,13 +257,16 @@ var RestaurantViewModel = function() {
 
 
     function showListings() {
-        var bounds = new google.maps.LatLngBounds();
+         bounds = new google.maps.LatLngBounds();
         // Extend the boundaries of the map for each marker and display the marker
         for (var i = 0; i < markers.length; i++) {
+            
             markers[i].setMap(map);
             bounds.extend(markers[i].position);
         }
-        map.fitBounds(bounds);
+
+        map.fitBounds(showListings);
+        console.log(bounds)
     }
 
     // This function will loop through the listings and hide them all.
@@ -280,14 +289,17 @@ var RestaurantViewModel = function() {
 
 
     this.selectedRestaurant = function(clickedRestaurant) {
+
         for (var i = 0; i < locations.length; i++) {
             var title = self.restaurantList()[i].title;
+            console.log(title)
             if (clickedRestaurant.title == title) {
                 this.currentRestaurant = self.restaurantList()[i];
             }
         }
-        marker.setAnimation(google.maps.Animation.BOUNCE);
+        
         google.maps.event.trigger(this.marker, 'click');
+        //marker.setAnimation(google.maps.Animation.BOUNCE);
 
     };
     //filter section
@@ -315,7 +327,7 @@ var RestaurantViewModel = function() {
     self.searchItem.subscribe(self.searchFilter);
     self.searchItem.subscribe(self.markerFilter);
 };
-};
+
 
 function errorHandling() {
     alert("Please try again later!!");
