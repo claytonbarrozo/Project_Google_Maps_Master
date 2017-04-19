@@ -171,7 +171,7 @@ var RestaurantViewModel = function() {
                 animation: google.maps.Animation.DROP,
                 id: locations[i].foursquareId
             });
-
+            console.log(title);
             markers.push(marker);
 
             this.restaurantList()[i].marker = marker; //Define marker
@@ -292,7 +292,7 @@ var RestaurantViewModel = function() {
 
         for (var i = 0; i < locations.length; i++) {
             var title = self.restaurantList()[i].title;
-            console.log(title)
+            console.log(this.title)
             if (clickedRestaurant.title == title) {
                 this.currentRestaurant = self.restaurantList()[i];
             }
@@ -370,7 +370,7 @@ this.populateInfoWindow = function(marker, infowindow) {
             console.log(data);
         }
     }).fail(function(e) {
-        largeInfowindow.setContent('<div><h4>Well this is embarrassing...</h4></div>' + '<div><h4>Foursquare could not be loaded, try again later.</h4></div>');
+        largeInfowindow.setContent('<div><div><h4>Foursquare could not be loaded, try again later...</h4></div>');
         largeInfowindow.open(map, marker);
     });
 };
