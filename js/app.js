@@ -151,9 +151,9 @@ var RestaurantViewModel = function() {
         largeInfowindow = new google.maps.InfoWindow();
 
 
-        var defaultIcon = makeMarkerIcon('0091ff');
+        //var defaultIcon = makeMarkerIcon('0091ff');
 
-        var highlightedIcon = makeMarkerIcon('ffff24');
+       // var highlightedIcon = makeMarkerIcon('ffff24');
 
         var bounds = new google.maps.LatLngBounds();
 
@@ -167,11 +167,12 @@ var RestaurantViewModel = function() {
                 position: position,
                 title: title,
                 content: content,
-                icon: defaultIcon,
+                icon: 'http://icons.iconarchive.com/icons/martin-berube/people/48/chef-icon.png',
                 animation: google.maps.Animation.DROP,
                 id: locations[i].foursquareId
+
             });
-            console.log(title);
+           // console.log(foursquareId);
             markers.push(marker);
 
             this.restaurantList()[i].marker = marker; //Define marker
@@ -184,22 +185,15 @@ var RestaurantViewModel = function() {
                 populateInfoWindow(this, largeInfowindow);
             });
 
-            marker.addListener('mouseover', function() {
-                this.setIcon(highlightedIcon);
-            });
-            marker.addListener('mouseout', function() {
-                this.setIcon(defaultIcon);
-            });
+           // marker.addListener('mouseover', function() {
+              //  this.setIcon(highlightedIcon);
+            //});
+            //marker.addListener('mouseout', function() {
+                //this.setIcon(defaultIcon);
+            //});
         }
 
         this.map.fitBounds(bounds);
-
-        document.getElementById('show-listings').addEventListener('click', showListings);
-        document.getElementById('hide-listings').addEventListener('click', function() {
-            hideMarkers(markers); 
-        });
-
-
     }
 
     function populateInfoWindow(marker, infowindow) {
@@ -238,7 +232,7 @@ var RestaurantViewModel = function() {
                         position: nearStreetViewLocation,
                         pov: {
                             heading: heading,
-                            pitch: 15 // this changes the degrees of teh camera if I want to look up or down
+                            pitch: 15 // this changes the degrees of eth camera if I want to look up or down
                         }
                     };
 
@@ -256,30 +250,11 @@ var RestaurantViewModel = function() {
     }
 
 
-    function showListings() {
-         bounds = new google.maps.LatLngBounds();
-        // Extend the boundaries of the map for each marker and display the marker
-        for (var i = 0; i < markers.length; i++) {
-            
-            markers[i].setMap(map);
-            bounds.extend(markers[i].position);
-        }
 
-        map.fitBounds(showListings);
-        console.log(bounds)
-    }
-
-    // This function will loop through the listings and hide them all.
-    function hideMarkers(markers) {
-        for (var i = 0; i < markers.length; i++) {
-            markers[i].setMap(null);
-        }
-    }
 
     function makeMarkerIcon(markerColor) {
         var markerImage = new google.maps.MarkerImage(
-            'https://chart.googleapis.com/chart?chst=d_map_spin&chld=1.15|0|' + markerColor +
-            '|40|_|%E2%80%A2',
+            'http://icons.iconarchive.com/icons/martin-berube/people/48/chef-icon.png',
             new google.maps.Size(21, 34),
             new google.maps.Point(0, 0),
             new google.maps.Point(10, 34),
@@ -287,45 +262,34 @@ var RestaurantViewModel = function() {
         return markerImage;
     }
 
-
+    // http://knockoutjs.com/documentation/click-binding.html#note-1-passing-a-current-item-as-a-parameter-to-your-handler-function
     this.selectedRestaurant = function(clickedRestaurant) {
-
-        for (var i = 0; i < locations.length; i++) {
-            var title = self.restaurantList()[i].title;
-            console.log(this.title)
-            if (clickedRestaurant.title == title) {
-                this.currentRestaurant = self.restaurantList()[i];
-            }
-        }
-        
-        google.maps.event.trigger(this.marker, 'click');
-        //marker.setAnimation(google.maps.Animation.BOUNCE);
+        var marker = clickedRestaurant.marker;
+       // console.log(clickedRestaurant);
+       // console.log(this);
+       // console.log(this === clickedRestaurant);
+        google.maps.event.trigger(marker, 'click');
 
     };
     //filter section
     self.searchItem = ko.observable('');
+
     self.searchFilter = function(value) {
+        var value = value.toLowerCase();
         self.restaurantList.removeAll();
         for (var i in locations) {
-            if (locations[i].title.toLowerCase().indexOf(value.toLowerCase()) >= 0) {
+            var title = locations[i].title.toLowerCase();
+            var match = title.indexOf(value) >= 0; // true or false
+
+            if (match) {
                 self.restaurantList.push(locations[i]);
             }
-        }
-    };
 
-    self.markerFilter = function(value) {
-        for (var i in locations) {
-            if (locations[i].marker.setMap(map) !== null) {
-                locations[i].marker.setMap(null);
-            }
-            if (locations[i].marker.title.toLowerCase().indexOf(value.toLowerCase()) >= 0) {
-                locations[i].marker.setMap(map);
-            }
+            locations[i].marker.setVisible(match); // true or false
         }
     };
 
     self.searchItem.subscribe(self.searchFilter);
-    self.searchItem.subscribe(self.markerFilter);
 };
 
 
@@ -333,6 +297,7 @@ function errorHandling() {
     alert("Please try again later!!");
 }
 
+self.markers.push(marker);
 
 //Setting up Foursquare for infowindow
 var CLIENT_ID = 'ZHNYRYRJWNHQGJHTPVVWLI1A3QDG3EJS42TFTIIDWEGGJOVX';
@@ -346,17 +311,17 @@ this.populateInfoWindow = function(marker, infowindow) {
 
 
     $.ajax({
+        type: "GET",
         url: url,
         dataType: 'json',
         data: {
-            id: locations.foursquareId,
+            id: locations[i].foursquareId,
             client_id: CLIENT_ID,
             client_secret: CLIENT_SECRET,
-
             async: true
         },
         success: function(data) {
-            console.log(data)
+            
             var venue = data.response.venue.name;
             var address = data.response.venue.location.address ? data.response.venue.location.address : " ";
             var city = data.response.venue.location.city ? data.response.venue.location.city : " ";
@@ -366,11 +331,11 @@ this.populateInfoWindow = function(marker, infowindow) {
 
 
             largeInfowindow.setContent('<div>' + '<b>' + venue + '</b>' + '</div>' + '<div>' + address + '</div>' + '<div>' + city + ', ' + state + ' ' + '<div>' + phone + '<div>' + url);
-            largeInfowindow.open(this.map, marker);
-            console.log(data);
+            largeInfowindow.open(map, marker);
+            
         }
     }).fail(function(e) {
-        largeInfowindow.setContent('<div><div><h4>Foursquare could not be loaded, try again later...</h4></div>');
+        largeInfowindow.setContent('<div><h4>Foursquare could not be loaded, try again later...</h4></div>');
         largeInfowindow.open(map, marker);
     });
 };
