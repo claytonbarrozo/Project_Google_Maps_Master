@@ -305,7 +305,6 @@ var CLIENT_SECRET = 'DPMYPDI0XVR5LITCDEEASMVJ0EGQ0HXXEGFNXVJSQSRU5SXV';
 
 
 //Populate the infowindow with Foursquare
-this.populateInfoWindow = function(marker, infowindow) {
 
     var url = 'https://api.foursquare.com/v2/venues/' + marker.id + '?ll=53.350140,-6.251495&oauth_token=M2XWK2D1X3QIQ1E2J0BYNK1VKR4JVVCHVE0ERRR2NFZNWZ1H&v=20170331';
 
@@ -338,7 +337,7 @@ this.populateInfoWindow = function(marker, infowindow) {
         largeInfowindow.setContent('<div><h4>Foursquare could not be loaded, try again later...</h4></div>');
         largeInfowindow.open(map, marker);
     });
-};
+
 var restaurantVM = new RestaurantViewModel();
 ko.applyBindings(restaurantVM);
 
