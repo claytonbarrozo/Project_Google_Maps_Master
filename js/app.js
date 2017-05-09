@@ -167,7 +167,7 @@ var RestaurantViewModel = function() {
                 position: position,
                 title: title,
                 content: content,
-                icon: 'http://icons.iconarchive.com/icons/martin-berube/people/48/chef-icon.png',
+                icon: 'https://icons.iconarchive.com/icons/martin-berube/people/48/chef-icon.png',
                 animation: google.maps.Animation.DROP,
                 id: locations[i].foursquareId
 
@@ -223,7 +223,7 @@ var RestaurantViewModel = function() {
 
     function makeMarkerIcon(markerColor) {
         var markerImage = new google.maps.MarkerImage(
-            'http://icons.iconarchive.com/icons/martin-berube/people/48/chef-icon.png',
+            'https://icons.iconarchive.com/icons/martin-berube/people/48/chef-icon.png',
             new google.maps.Size(21, 34),
             new google.maps.Point(0, 0),
             new google.maps.Point(10, 34),
