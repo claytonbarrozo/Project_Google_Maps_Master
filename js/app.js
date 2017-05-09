@@ -211,38 +211,7 @@ var RestaurantViewModel = function() {
                 infowindow.marker = null;
             });
 
-            var streetViewService = new google.maps.StreetViewService();
-            var radius = 50;
-            // In case the status is OK, which means the pano was found, compute the
-            // position of the streetview image, then calculate the heading, then get a
-            // panorama from that and set the options
-
-            function getStreetView(data, status) {
-                if (status == google.maps.StreetViewStatus.OK) {
-                    clearTimeout(errorTimeout);
-                    var nearStreetViewLocation = data.location.latLng;
-                    var heading = google.maps.geometry.spherical.computeHeading(nearStreetViewLocation, marker.position);
-                    infowindow.setContent('<h2>' + marker.title + '</h2>' + '<div id="pano">' + '</div>' +
-                        '<a href="' + marker.content + '">' + marker.content + '</a>');
-                    var errorTimeout = setTimeout(function() {
-                        alert("Something went wrong");
-                    }, 9000);
-                    clearTimeout(errorTimeout);
-                    var panoramaOptions = {
-                        position: nearStreetViewLocation,
-                        pov: {
-                            heading: heading,
-                            pitch: 15 // this changes the degrees of eth camera if I want to look up or down
-                        }
-                    };
-
-                    var panorama = new google.maps.StreetViewPanorama(document.getElementById('pano'), panoramaOptions);
-                } else {
-                    infowindow.setContent('<div>' + marker.title + '</div>' + '<div>No Street View Found</div>');
-                }
-            }
-
-            streetViewService.getPanoramaByLocation(marker.position, radius, getStreetView);
+          
             // Open the infowindow on the correct marker.
             infowindow.open(map, marker);
             
@@ -305,22 +274,23 @@ var CLIENT_SECRET = 'DPMYPDI0XVR5LITCDEEASMVJ0EGQ0HXXEGFNXVJSQSRU5SXV';
 
 
 //Populate the infowindow with Foursquare
+this.populateFrSquare = function(marker, infowindow) {
 
     var url = 'https://api.foursquare.com/v2/venues/' + marker.id + '?ll=53.350140,-6.251495&oauth_token=M2XWK2D1X3QIQ1E2J0BYNK1VKR4JVVCHVE0ERRR2NFZNWZ1H&v=20170331';
 
 
-    $.ajax({
-        type: "GET",
+       $.ajax({
         url: url,
         dataType: 'json',
         data: {
             id: locations[i].foursquareId,
             client_id: CLIENT_ID,
             client_secret: CLIENT_SECRET,
+
             async: true
         },
         success: function(data) {
-            
+            console.log(data)
             var venue = data.response.venue.name;
             var address = data.response.venue.location.address ? data.response.venue.location.address : " ";
             var city = data.response.venue.location.city ? data.response.venue.location.city : " ";
@@ -330,14 +300,14 @@ var CLIENT_SECRET = 'DPMYPDI0XVR5LITCDEEASMVJ0EGQ0HXXEGFNXVJSQSRU5SXV';
 
 
             largeInfowindow.setContent('<div>' + '<b>' + venue + '</b>' + '</div>' + '<div>' + address + '</div>' + '<div>' + city + ', ' + state + ' ' + '<div>' + phone + '<div>' + url);
-            largeInfowindow.open(map, marker);
-            
+            largeInfowindow.open(this.map, marker);
+            console.log(data);
         }
     }).fail(function(e) {
-        largeInfowindow.setContent('<div><h4>Foursquare could not be loaded, try again later...</h4></div>');
+        largeInfowindow.setContent('<div><h4>Well this is embarrassing...</h4></div>' + '<div><h4>Foursquare could not be loaded, try again later.</h4></div>');
         largeInfowindow.open(map, marker);
     });
-
+};
 var restaurantVM = new RestaurantViewModel();
 ko.applyBindings(restaurantVM);
 
