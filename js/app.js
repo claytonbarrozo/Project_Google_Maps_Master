@@ -196,30 +196,7 @@ var RestaurantViewModel = function() {
         this.map.fitBounds(bounds);
     }
 
-    function populateInfoWindow(marker, infowindow) {
-        if (infowindow.marker != marker) {
-            infowindow.setContent('');
-            infowindow.marker = marker;
-            setTimeout(function() {
-                marker.setAnimation(null);
-            }, 2600);
-
-            //infowindow.setContent('<div>' + marker.title + '</div>');
-            //infowindow.open(map, marker);
-
-            infowindow.addListener('closeclick', function() {
-                infowindow.marker = null;
-            });
-
-          
-            // Open the infowindow on the correct marker.
-            infowindow.open(map, marker);
-            
-        }
-    }
-
-
-
+  
 
     function makeMarkerIcon(markerColor) {
         var markerImage = new google.maps.MarkerImage(
@@ -274,8 +251,26 @@ var CLIENT_SECRET = 'DPMYPDI0XVR5LITCDEEASMVJ0EGQ0HXXEGFNXVJSQSRU5SXV';
 
 
 //Populate the infowindow with Foursquare
-this.populateFrSquare = function(marker, infowindow) {
+this.populateInfoWindow = function(marker, infowindow) {
 
+     if (infowindow.marker != marker) {
+            infowindow.setContent('');
+            infowindow.marker = marker;
+            setTimeout(function() {
+                marker.setAnimation(null);
+            }, 2600);
+
+           
+
+            infowindow.addListener('closeclick', function() {
+                infowindow.marker = null;
+            });
+
+          
+            // Open the infowindow on the correct marker.
+            infowindow.open(map, marker);
+            
+        }
     var url = 'https://api.foursquare.com/v2/venues/' + marker.id + '?ll=53.350140,-6.251495&oauth_token=M2XWK2D1X3QIQ1E2J0BYNK1VKR4JVVCHVE0ERRR2NFZNWZ1H&v=20170331';
 
 
