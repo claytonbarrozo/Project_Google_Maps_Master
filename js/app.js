@@ -275,13 +275,13 @@ this.populateInfoWindow = function(marker, infowindow) {
 
 
        $.ajax({
+        type: "GET",
         url: url,
         dataType: 'json',
         data: {
-            id: locations[i].foursquareId,
             client_id: CLIENT_ID,
             client_secret: CLIENT_SECRET,
-
+            v: 20170509,
             async: true
         },
         success: function(data) {
