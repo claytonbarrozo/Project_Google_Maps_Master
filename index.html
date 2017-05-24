@@ -6,13 +6,15 @@
     <title>Favorites Restaurants in Dublin</title>
     <link rel="stylesheet" href="css/styles.css">
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" id="jquery"></script>
+     <script src="https://use.fontawesome.com/50d3dd1467.js"></script>
 </head>
 <body>
 
     <div class="container">
         <div class="search">
-            <h3>Filter</h3></div>
+            </div>
             <form>
+            <h3><i class="fa fa-filter" aria-hidden="true"></i>Filter</h3>
             <input type="text" name="search" placeholder="Ex: Restaurants" autocomplete="off" data-bind="textInput: searchItem">
             </form>
         
@@ -21,10 +23,10 @@
                 <li data-bind="text: title, click: $parent.selectedRestaurant"></li>
             </ul>
         </div>
-     <div class="map-box">              
-    <div id="map"></div>
-    </div>
-    </div>
+        </div>
+         <div class="map-box">              
+                <div id="map"></div>
+         </div>
 
         
     <script src="js/lib/jquery.min.js"></script>

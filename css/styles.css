@@ -1,160 +1,165 @@
-*{
-  margin: 0px;
-  padding: 0px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
+* {
+    margin: 0px;
+    padding: 0px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
 }
 /* Mobile Section*/
+
 html,
 body,
- {
-  height: 100%;
-  width: 400px;
-  }
-h1,
-h2,
-h3,
-h4,
-p {
-  text-align: center;
+{
+    height: 100%;
+    width: 400px;
 }
-
 .container {
-  height: 100%;
-  width: 100%;
- }
- /* Option-box Section*/
- .option-box {
-  border: 1px solid #999;
-  border-radius: 3px;
-  height: 40%;
-  float: left;
-  text-align: left;
-  width: 100%;
-  background-color: black;
-  box-shadow: 10px 10px 5px #888888;
+    height: 100%;
+    width: 100%;
+}
+/* Option-box Section*/
+
+.option-box {
+    border: 1px solid #999;
+    border-radius: 3px;
+    height: 40%;
+    float: right;
+    text-align: center;
+    width: 100%;
+    background-color: black;
+    box-shadow: 10px 10px 5px #888888;
 }
 input {
-  font-size: 18px;
+    font-size: 12px;
+    width: 71%;
 }
-h1, h3 {
-  color: white;
-  font-size: 20px;
-  margin: 10 10 10 15;
-  text-align: left;
-  font-family: "PT Serif";
+h1,
+h3 {
+    color:  #33b5e5;
+    font-size: 20px;
+    margin-left: 15px;
+    margin-top: 15px;
+    text-align: left;
+    font-family: "PT Serif";
+    padding: 2px;
 }
-#hide-listings,
-#show-listings {
-  height: 25px;
-  width: 75%;
-  margin-top: 5px;
-  margin-left: 50px;
-}
-.search{
+
+.search {
     color: white;
     margin-top: 10px;
-
- 
-}
-form input{
-height: 20px;
-width: 75%;
-margin: 0;
-padding: 0;
-font-size: 15px;
-border: 1px solid #CCCCCC;
-margin-left: 50px;
-margin-top: 5px;
-
-}
-
-#restaurant-list {
-  font-size: 13px;
-    color: white;
-    float: left;
-    padding-top: 10px;
-    padding-left: 10px;
-    margin-left: 50px;
     
-<<<<<<< HEAD
+
+}
+form input {
+    height: 24px;
+    margin: 0;
+    padding: 8px;
+    font-size: 15px;
+    border: 1px solid #CCCCCC;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+#Restaurant-list {
+    list-style-type: none;
+    margin: 10px;
+    margin-left: 15px;
+    padding: 0;
 }
 li {
-  font-size: 18px;
+    width: 75%;
+    padding: 8px;
+    margin-bottom: 8px;
+    background-color: #33b5e5;
+    color: #ffffff;
 }
 li:hover {
-  color: blue;
-  background-color: white;
+    background-color: #0099cc;
+    
 }
 li:active {
-  color: black;
+    color: black;
 }
 
-=======
-}
->>>>>>> origin/master
 /* End-Option-box Section*/
 /* Map Section*/
+
 .map-box {
-  margin: auto;
-  margin-top: 35px;
-  border: 1px solid #999;
-  border-radius: 2px;
-  height: 150%;
-  width: 100%;
-  float: left;
-     
+    margin: auto;
+    border: 1px solid #999;
+    border-radius: 2px;
+    height: 150%;
+    width: 100%;
+    
 }
- #map {
-        height: 100%;
-      }
+#map {
+    height: 100%;
+}
 /*End - Map Section*/
 
 #pano {
-  width: 250px;
-  height: 250px;
-  margin-bottom: 10px;
+    width: 250px;
+    height: 250px;
+    margin-bottom: 10px;
 }
 .text {
-  font-size: 12px;
-  color: white;
+    font-size: 12px;
+    color: white;
 }
-
 /* End - Mobile Section*/
 /* Media Query section For large screen*/
+
 @media screen and (min-width: 800px) {
-#hide-listings,
-#show-listings {
-   margin-left: 25px;
-}
-form input{
-  margin-left: 25px;
+  input {
+    font-size: 12px;
+    width: 18%;
 }
 
-#restaurant-list {
-    margin-left: 25px;
-    
-}
-.option-box {
-    margin-top: 10px;
-    margin-left: 10px;
-    height: 98%;
-    width: 240px;
-    background-color:   #808080;
-  }
 
-.map-box {
-    border: 1px solid #999;
-    border-radius: 3px;
-    height: 98%;
-    width: 80%;
-    box-shadow: 10px 10px 5px #888888;
-    border: 2px solid #D3D3D3;
-    bottom:0px;
-    left: 280px;
-    position: absolute;
-      
-  }
+form input {
+    height: 24px;
+    margin: 0;
+    padding: 8px;
+    font-size: 15px;
+    border: 1px solid #CCCCCC;
+    margin-top: 15px;
 }
+#Restaurant-list {
+    list-style-type: none;
+    margin: 10px;
+    margin-left: 15px;
+    padding: 0;
 
+}
+li {
+    width: 19%;
+    padding: 8px;
+    margin-bottom: 8px;
+    background-color: #33b5e5;
+    color: #ffffff;
+
+}
+    form input {
+        margin-left: 25px;
+    }
+    #restaurant-list {
+        margin-left: 25px;
+    }
+    .option-box {
+        margin-top: 10px;
+        margin-left: 10px;
+        height: 98%;
+        width: 240px;
+        background-color: #808080;
+    }
+    .map-box {
+        border: 1px solid #999;
+        border-radius: 3px;
+        height: 98%;
+        width: 80%;
+        box-shadow: 10px 10px 5px #888888;
+        border: 2px solid #D3D3D3;
+        bottom: 0px;
+        left: 280px;
+        position: absolute;
+    }
+}
 /* End - Media Query section For large screen*/

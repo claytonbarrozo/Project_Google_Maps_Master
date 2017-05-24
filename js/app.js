@@ -75,11 +75,11 @@ var locations = [{
 
 //Knockout starts
 //Starts RestaurantViewModel
-var RestaurantViewModel = function() {
+var RestaurantViewModel = function () {
     var self = this; //Assign self to this
     this.restaurantList = ko.observableArray([]);
 
-    locations.forEach(function(restaurantItem) {
+    locations.forEach(function (restaurantItem) {
         self.restaurantList.push(restaurantItem);
     });
 
@@ -87,10 +87,10 @@ var RestaurantViewModel = function() {
 
     for (var i = 0; i < locations.length; i++) {
         this.restaurantList()[i].marker = markers[i];
-        }
-    
- 
-    RestaurantViewModel.prototype.initMap = function() {
+    }
+
+
+    RestaurantViewModel.prototype.initMap = function () {
         // style courtesy of snazzy maps "Crisp and Vivid" by "Nathan"
         // https://snazzymaps.com/style/2053/crisp-and-vivid
         var styles = [{
@@ -153,7 +153,7 @@ var RestaurantViewModel = function() {
 
         //var defaultIcon = makeMarkerIcon('0091ff');
 
-       // var highlightedIcon = makeMarkerIcon('ffff24');
+        // var highlightedIcon = makeMarkerIcon('ffff24');
 
         var bounds = new google.maps.LatLngBounds();
 
@@ -172,7 +172,7 @@ var RestaurantViewModel = function() {
                 id: locations[i].foursquareId
 
             });
-           // console.log(foursquareId);
+            // console.log(foursquareId);
             markers.push(marker);
 
             this.restaurantList()[i].marker = marker; //Define marker
@@ -181,22 +181,22 @@ var RestaurantViewModel = function() {
 
             bounds.extend(marker.position);
 
-            marker.addListener('click', function() {
+            marker.addListener('click', function () {
                 populateInfoWindow(this, largeInfowindow);
             });
 
-           // marker.addListener('mouseover', function() {
-              //  this.setIcon(highlightedIcon);
+            // marker.addListener('mouseover', function() {
+            //  this.setIcon(highlightedIcon);
             //});
             //marker.addListener('mouseout', function() {
-                //this.setIcon(defaultIcon);
+            //this.setIcon(defaultIcon);
             //});
         }
 
         this.map.fitBounds(bounds);
     }
 
-  
+
 
     function makeMarkerIcon(markerColor) {
         var markerImage = new google.maps.MarkerImage(
@@ -209,18 +209,18 @@ var RestaurantViewModel = function() {
     }
 
     // http://knockoutjs.com/documentation/click-binding.html#note-1-passing-a-current-item-as-a-parameter-to-your-handler-function
-    this.selectedRestaurant = function(clickedRestaurant) {
+    this.selectedRestaurant = function (clickedRestaurant) {
         var marker = clickedRestaurant.marker;
-       // console.log(clickedRestaurant);
-       // console.log(this);
-       // console.log(this === clickedRestaurant);
+        // console.log(clickedRestaurant);
+        // console.log(this);
+        // console.log(this === clickedRestaurant);
         google.maps.event.trigger(marker, 'click');
 
     };
     //filter section
     self.searchItem = ko.observable('');
 
-    self.searchFilter = function(value) {
+    self.searchFilter = function (value) {
         var value = value.toLowerCase();
         self.restaurantList.removeAll();
         for (var i in locations) {
@@ -251,40 +251,40 @@ var CLIENT_SECRET = 'DPMYPDI0XVR5LITCDEEASMVJ0EGQ0HXXEGFNXVJSQSRU5SXV';
 
 
 //Populate the infowindow with Foursquare
-this.populateInfoWindow = function(marker, infowindow) {
+this.populateInfoWindow = function (marker, infowindow) {
 
-     if (infowindow.marker != marker) {
-            infowindow.setContent('');
-            infowindow.marker = marker;
-            setTimeout(function() {
-                marker.setAnimation(null);
-            }, 2600);
+    if (infowindow.marker != marker) {
+        infowindow.setContent('');
+        infowindow.marker = marker;
+        setTimeout(function () {
+            marker.setAnimation(null);
+        }, 2600);
 
-           
 
-            infowindow.addListener('closeclick', function() {
-                infowindow.marker = null;
-            });
 
-          
-            // Open the infowindow on the correct marker.
-            infowindow.open(map, marker);
-            
-        }
+        infowindow.addListener('closeclick', function () {
+            infowindow.marker = null;
+        });
+
+
+        // Open the infowindow on the correct marker.
+        infowindow.open(map, marker);
+
+    }
     var url = 'https://api.foursquare.com/v2/venues/' + marker.id + '?ll=53.350140,-6.251495&oauth_token=M2XWK2D1X3QIQ1E2J0BYNK1VKR4JVVCHVE0ERRR2NFZNWZ1H&v=20170331';
 
 
-       $.ajax({
+    $.ajax({
+        type: "GET",
         url: url,
         dataType: 'json',
         data: {
-            id: locations[i].foursquareId,
             client_id: CLIENT_ID,
             client_secret: CLIENT_SECRET,
-
+            v: 20170509,
             async: true
         },
-        success: function(data) {
+        success: function (data) {
             console.log(data)
             var venue = data.response.venue.name;
             var address = data.response.venue.location.address ? data.response.venue.location.address : " ";
@@ -298,7 +298,7 @@ this.populateInfoWindow = function(marker, infowindow) {
             largeInfowindow.open(this.map, marker);
             console.log(data);
         }
-    }).fail(function(e) {
+    }).fail(function (e) {
         largeInfowindow.setContent('<div><h4>Well this is embarrassing...</h4></div>' + '<div><h4>Foursquare could not be loaded, try again later.</h4></div>');
         largeInfowindow.open(map, marker);
     });
@@ -308,7 +308,7 @@ ko.applyBindings(restaurantVM);
 
 //This code selects the item when is clicked
 var selctor = '#restaurant-list li';
-$(selctor).on('click', function() {
+$(selctor).on('click', function () {
     $(selctor).removeClass('active');
     $(this).addClass('active');
 });
