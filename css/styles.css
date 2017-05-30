@@ -10,7 +10,7 @@ html,
 body,
 {
     height: 100%;
-    width: 400px;
+    width: 320px;
 }
 .container {
     height: 100%;
@@ -30,7 +30,7 @@ body,
 }
 input {
     font-size: 12px;
-    width: 71%;
+    width: 93%;
 }
 h1,
 h3 {
@@ -65,11 +65,12 @@ form input {
     padding: 0;
 }
 li {
-    width: 75%;
+    width: 100%;
     padding: 8px;
     margin-bottom: 8px;
     background-color: #33b5e5;
     color: #ffffff;
+    cursor: pointer;
 }
 li:hover {
     background-color: #0099cc;
@@ -82,13 +83,14 @@ li:active {
 /* End-Option-box Section*/
 /* Map Section*/
 
-.map-box {
-    margin: auto;
-    border: 1px solid #999;
-    border-radius: 2px;
-    height: 150%;
-    width: 100%;
-    
+    .map-box {
+        height: 50%;
+        width: 90%;
+        box-shadow: 10px 10px 5px #888888;
+        border: 2px solid #D3D3D3;
+        bottom: 6px;
+        left: 18px;
+        position: absolute;
 }
 #map {
     height: 100%;
@@ -106,50 +108,61 @@ li:active {
 }
 /* End - Mobile Section*/
 /* Media Query section For large screen*/
+@media screen and (min-width: 700px) {
+      input {
+    
+    width: 90%;
+    padding-left: 50px;
 
-@media screen and (min-width: 800px) {
-  input {
-    font-size: 12px;
-    width: 18%;
-}
 
-
-form input {
-    height: 24px;
-    margin: 0;
-    padding: 8px;
-    font-size: 15px;
-    border: 1px solid #CCCCCC;
-    margin-top: 15px;
-}
-#Restaurant-list {
-    list-style-type: none;
-    margin: 10px;
-    margin-left: 15px;
-    padding: 0;
-
-}
-li {
-    width: 19%;
-    padding: 8px;
-    margin-bottom: 8px;
-    background-color: #33b5e5;
-    color: #ffffff;
-
-}
+    }
     form input {
-        margin-left: 25px;
+        
+        margin-left: 50px;
+        
+       
     }
-    #restaurant-list {
-        margin-left: 25px;
+    #Restaurant-list {
+        width: 90%;
+        margin-left: 50px;
+        
+
     }
-    .option-box {
-        margin-top: 10px;
-        margin-left: 10px;
-        height: 98%;
-        width: 240px;
-        background-color: #808080;
+
+        .map-box {
+            height: 50%;
+            width: 90%;
+            box-shadow: 10px 10px 5px #888888;
+            border: 2px solid #D3D3D3;
+            bottom: 10px;
+            left: 50px;
+            position: absolute;
     }
+}
+@media screen and (min-width: 900px) {
+
+      input {
+    
+    width: 220px;
+    
+
+
+}
+form input {
+    
+    margin-left: 25px;
+    
+   
+}
+
+
+li {
+    width: 220px;
+   margin-left: -25px;
+
+}
+        
+   
     .map-box {
         border: 1px solid #999;
         border-radius: 3px;
@@ -162,4 +175,5 @@ li {
         position: absolute;
     }
 }
+
 /* End - Media Query section For large screen*/

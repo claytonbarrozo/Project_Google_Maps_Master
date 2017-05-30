@@ -17,6 +17,6 @@ url http://stackoverflow.com/questions/21111946/how-to-add-class-active-on-speci
 ## Knockoutjs 
 url http://knockoutjs.com/documentation/observables.html 
 
-## Add hamburger drop down menu
-http://www.internetkultur.at/simple-hamburger-drop-down-menu-with-css-and-jquery/ 
+## https://www.w3schools.com/css
+
 
