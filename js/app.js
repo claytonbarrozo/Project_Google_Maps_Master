@@ -274,7 +274,11 @@ this.populateInfoWindow = function (marker, infowindow) {
     var url = 'https://api.foursquare.com/v2/venues/' + marker.id + '?ll=53.350140,-6.251495&oauth_token=M2XWK2D1X3QIQ1E2J0BYNK1VKR4JVVCHVE0ERRR2NFZNWZ1H&v=20170331';
 
 
+<<<<<<< HEAD
     $.ajax({
+=======
+       $.ajax({
+>>>>>>> origin/master
         type: "GET",
         url: url,
         dataType: 'json',
